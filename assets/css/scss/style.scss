@@ -29,11 +29,11 @@ header h1 {
   a:hover { color: $anchor-color;}
 }
 
-
 @media screen and (min-width: 600px) {
   div#container {
     width: $site_width;
-    margin: 20px auto;
+    margin: 0px auto;
+    padding-top: 20px;
   }
   div.content {
     width: percentage(($site_width - $nav_width - 30) / $site_width);
@@ -42,7 +42,8 @@ header h1 {
   }
   footer div {
     width: $site_width;
-    margin: 20px auto;
+    margin: 0px auto;
+    padding-top: 20px;
   }
   
   nav {

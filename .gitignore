@@ -4,3 +4,5 @@ Thumbs.db
 .DS_Store
 
 !.gitkeep
+
+.sass-cache/*

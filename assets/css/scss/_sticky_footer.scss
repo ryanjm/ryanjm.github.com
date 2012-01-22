@@ -1,24 +1,30 @@
-// http://www.cssstickyfooter.com/ 
+// http://ryanfait.com/sticky-footer/
 
-html, body {height: 100%;}
 
-#wrap {min-height: 100%;}
+html, body { height: 100%;}
+
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -1 * $footer_height;
+}
 
 #container {overflow:auto;
 	padding-bottom: $footer_height;}  /* must be same height as the footer */
 
-footer {
-  position: relative;
-	margin-top: -1 * $footer_height; /* negative value of footer height */
+footer, #push {
+//  position: relative;
+//  margin-top: -1 * $footer_height; /* negative value of footer height */
 	height: $footer_height;
-	clear:both;
+//  clear:both;
 } 
 
 /*Opera Fix*/
-body:before {/* thanks to Maleika (Kohoutec)*/
-content:"";
-height:100%;
-float:left;
-width:0;
-margin-top:-32767px;/* thank you Erik J - negate effect of float*/
-}
+//body:before {/* thanks to Maleika (Kohoutec)*/
+//content:"";
+//height:100%;
+//float:left;
+//width:0;
+//margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+//}
