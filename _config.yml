@@ -1,7 +1,8 @@
-permalink: /:categories/:title.html
+permalink: pretty
 auto: true
 pygments: true
 var:
-  archive_path: /archive.html
-  categories_path : /categories.html
-  tags_path : /tags.html
+  home_path: /
+  archive_path: /archive/
+  categories_path : /categories/
+  tags_path : /tags/

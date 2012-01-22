@@ -1,14 +1,13 @@
-# Jekyll-Bootstrap
+# RyanJM's site
 
-The quickest and most hassle-free way to get your new Jekyll powered website up and running.
-100% compatible with GitHub pages.
+This is my site. I've built it using Jekll. If you are interested, I'd suggest taking a look at Jekyll-Bootstrap.
 
 <http://jekyllbootstrap.com>
 
-## Development
+## Jekyll
 
-Development is active! 
+jekyll --server
 
-## License
+## SCSS
 
-[Creative Commons](http://creativecommons.org/licenses/by-nc-sa/3.0/)
+sass --watch assets/css/scss:assets/css
