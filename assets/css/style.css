@@ -356,39 +356,42 @@ nav li {
 nav ul {
   margin-bottom: 30px; }
 
-h1.title {
+#post h1 {
   margin: 0 0 15px;
   font-size: 35px; }
+#post a {
+  text-decoration: underline; }
 
-ul.menu {
+#page h1 {
+  margin: 0 0 15px;
+  font-size: 35px; }
+#page ul.menu {
   margin: 15px 0px 30px 0px;
   padding-left: 0px;
   overflow: auto; }
-  ul.menu li {
+  #page ul.menu li {
     list-style-type: none;
     float: left;
     margin: 10px 25px; }
-    ul.menu li a {
+    #page ul.menu li a {
       text-decoration: none;
       color: #6A6A6A;
       padding: 7px 15px;
       border-radius: 5px;
       -moz-border-radius: 5px;
       -webkit-border-radius: 5px; }
-      ul.menu li a:visited {
+      #page ul.menu li a:visited {
         color: #8F8F8F; }
-      ul.menu li a:hover {
+      #page ul.menu li a:hover {
         color: black;
         background-color: #EDEDED; }
-
-ul.archive {
+#page ul.archive {
   margin-left: 0px;
   padding-left: 0px; }
-  ul.archive li {
+  #page ul.archive li {
     list-style-type: none;
     margin: 5px 0px; }
-
-ul.indent {
+#page ul.indent {
   margin-left: 30px; }
 
 footer {
