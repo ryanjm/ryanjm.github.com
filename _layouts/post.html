@@ -17,6 +17,11 @@ layout: default
     <span class="previous">Previous: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></span>
   {% endif %}
 {% endif %}
+
+{% if page.previous && page.next %}
+<br/>
+{% endif %}
+
 {% if page.next %}
   {% if page.categories == page.next.categories %}
     <span class="next">Next: <a href="{{ page.next.url }}">{{ page.next.title }}</a></span>
