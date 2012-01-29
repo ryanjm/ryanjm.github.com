@@ -1,6 +1,7 @@
 ---
 layout: post
-category: code
+category: other
+tags: [front, random]
 ---
 
 Cringely gets at a good point about student motivation and it's impact on learning. He is quoting a reader:

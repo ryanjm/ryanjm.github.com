@@ -1,6 +1,7 @@
 ---
 layout: post
-category : code
+category : other
+tags: [front, random]
 ---
 
 An article about David Oglivy and his habits as a copywriter.

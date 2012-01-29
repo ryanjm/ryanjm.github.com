@@ -11,3 +11,15 @@ jekyll --server
 ## SCSS
 
 sass --watch assets/css/scss:assets/css
+
+## Categories
+
+Code
+Photos
+Other
+
+## Tags
+
+front - put on front page
+
+all tags should be plural otherwise
