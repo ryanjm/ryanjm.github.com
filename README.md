@@ -23,3 +23,7 @@ Other
 front - put on front page
 
 all tags should be plural otherwise
+
+## Fonts
+
+http://www.google.com/webfonts#UsePlace:use/Collection:Tenor+Sans|Cousine|Crimson+Text

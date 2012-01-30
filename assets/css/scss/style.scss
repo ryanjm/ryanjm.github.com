@@ -19,13 +19,15 @@ $footer_height: 150px;
 // http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
 
 body {
-  font-size: 14px;
+  font-size: 16px;
+  @include main-font();
   
   p { line-height: 150%; }
 }
 
 header h1 {
   font-size: 18px;
+  @include heading-font();
   
   a:hover { color: $anchor-color;}
 }

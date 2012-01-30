@@ -12,3 +12,15 @@ $anchor-hover-color: #757575;
 a:hover { color: $anchor-hover-color; }
 
 $block-quote: #2C2C2C;
+
+@mixin main-font(){
+  font-family: 'Crimson Text', serif;
+}
+
+@mixin code-font(){
+  font-family: 'Cousine', sans-serif;
+}
+
+@mixin heading-font(){
+  font-family: 'Tenor Sans', sans-serif;
+}

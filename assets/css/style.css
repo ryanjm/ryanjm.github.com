@@ -400,12 +400,14 @@ footer {
     padding: 10px 20px; }
 
 body {
-  font-size: 14px; }
+  font-size: 16px;
+  font-family: 'Crimson Text', serif; }
   body p {
     line-height: 150%; }
 
 header h1 {
-  font-size: 18px; }
+  font-size: 18px;
+  font-family: 'Tenor Sans', sans-serif; }
   header h1 a:hover {
     color: #3d3d3d; }
 
