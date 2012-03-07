@@ -6,9 +6,9 @@ tags: [front, js, jQuery]
 
 My mindset on how to use and develop in jQuery has just changed dramatically. I watched Yehuda Katz's video on [Evented Programming](http://jquery14.com/day-11). Basically the idea he presents boils down to asking:
 
-# If this was natively supported, what would it look like?
-# Then writing the code to get the functionality you want, based on that.
-# Then write the code to implement the "browser code"
+1. If this was natively supported, what would it look like?
+2. Then writing the code to get the functionality you want, based on that.
+3. Then write the code to implement the "browser code"
 
 Amazing. This creates very reusable code and simplifies the code you do write.
 
