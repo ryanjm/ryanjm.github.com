@@ -22,4 +22,4 @@ Then there is the ticket system with such prizes as an iPad 2 for 120,000 ticket
 
 Overall the experience was ok, but there weren't that many games that we were having "fun" with. The ones for tickets are based on chance or small skill (such as pushing a button at the right time), nothing engaging. The ones that we found "fun" didn't give tickets.
 
-At the end of the day how much money was spent on a date does factor into the joy gained from it. Fun dates shouldn't be outrageously expensive. test
+At the end of the day how much money was spent on a date does factor into the joy gained from it. Fun dates shouldn't be outrageously expensive.
