@@ -14,4 +14,4 @@ Amazing. This creates very reusable code and simplifies the code you do write.
 
 I came across this video from Dan Webb's article on [data-* attributes](http://danwebb.net/2010/1/27/put-that-data-attribute-away-son-you-might-hurt-someone). It is also a great article and helps remember that we should try to keep the html as semantic as possible.
 
-Great resources to checkout.
+Great resources to checkout. 
