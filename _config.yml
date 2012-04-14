@@ -1,6 +1,7 @@
 permalink: pretty
 auto: true
 pygments: true
+markdown: redcarpet
 var:
   home_path: /
   archive_path: /archive/
