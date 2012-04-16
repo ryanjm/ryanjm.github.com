@@ -1,0 +1,89 @@
+@import "reset";
+@import "std_mixins";
+@import "fonts_and_colors"; 
+
+
+$nav_width: 150px;
+$site_width: 600px;
+$footer_height: 150px;
+
+@import "sticky_footer";
+@import "index";
+@import "nav";
+@import "posts";
+@import "page";
+@import "code";
+@import "pygments";
+@import "footer";
+
+// Five Media Query increments: 480, 600, 768, 992 and 1382px
+// via 320andup
+// http://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+
+body {
+  font-size: 16px;
+  @include main-font();
+  
+  p { line-height: 150%; }
+}
+
+header h1 {
+  font-size: 18px;
+  @include heading-font();
+  
+  a:hover { color: $anchor-color;}
+}
+
+@media screen and (min-width: 600px) {
+  div#container {
+    width: $site_width;
+    margin: 0px auto;
+    padding-top: 20px;
+  }
+  div.content {
+    width: percentage(($site_width - $nav_width - 30) / $site_width);
+    float: left;
+    padding-left: 30px;
+  }
+  footer div {
+    width: $site_width;
+    margin: 0px auto;
+    padding-top: 20px;
+  }
+  
+  nav {
+    width: percentage($nav_width / $site_width);
+    float: left;
+  }
+}
+// smaller screens
+@media screen and (max-width: 600px) {
+  div#container {
+    width: default;
+    margin: 0 30px;
+  }
+  footer div {
+    width: default;
+    margin: 0 30px;
+  }
+  
+  nav li {
+    float: left;
+  }
+  nav {
+    width: default;
+    overflow: auto;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  div.container {
+    width: default;
+    margin: 0 10px;
+  }
+  footer div {
+    width: default;
+    margin: 0 10px;
+  }
+  
+}

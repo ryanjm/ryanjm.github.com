@@ -1,4 +1,4 @@
-gs# RyanJM's site
+# RyanJM's site
 
 This is my site. I've built it using Jekll. If you are interested, I'd suggest taking a look at Jekyll-Bootstrap.
 
@@ -27,3 +27,5 @@ all tags should be plural otherwise
 ## Fonts
 
 http://www.google.com/webfonts#UsePlace:use/Collection:Tenor+Sans|Cousine|Crimson+Text
+
+http://stackoverflow.com/questions/6201339/a-clean-system-for-github-pages-with-local-plugins
