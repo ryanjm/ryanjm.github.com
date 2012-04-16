@@ -1,0 +1,9 @@
+<div class="highlight"><pre><code class="text">&lt;% a = all_attributes_for(@listing) %&gt;
+&lt;% attributes_for_view(@listing,a).each do |key,value| %&gt;
+  &lt;li&gt;
+    &lt;%= content_tag :span, key %&gt;
+    &lt;%= content_tag :strong, value %&gt;
+  &lt;/li&gt;
+&lt;% end %&gt;
+</code></pre>
+</div>

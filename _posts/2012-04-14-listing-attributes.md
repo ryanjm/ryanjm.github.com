@@ -4,16 +4,16 @@ category: code
 tags: [front, ruby, rails]
 ---
 
-This past week I was working on a Ruby on Rails project where I needed to list out a lot of attributes of an object. The difficult part came in the fact that we didn't want to display the attribute if it wasn't set or was 0.
+This past week I was working on a Ruby on Rails project where I needed to list out a lot of attributes of an object. The difficult part came in the fact that I didn't want to display the attribute if it wasn't set or was 0.
 
-Originally we had:
+Originally I had:
 
-```
-<% if @object.my_attribute && !@object.my_attribute.blank? %>
-  <li>
-    <strong>Attribute Label</strong>
+```erb
+<% if @object.my_attribute && !@object.my_attribute.blank? %>  
+  <li>  
+    <strong>Attribute Label</strong>  
     <span><%= @object.my_attribute %></span>
-  </li>
+  </li>  
 <% end %>
 ```
 
@@ -21,10 +21,11 @@ When you start talking about 25 or 30 attributes you are printing out, some of w
 
 The next step was to move this to a helper method.
 
-```
-# in the view
+```erb
+<%# in the view %>
 <%= print_attribute("Attribute Label",@object.my_attribute) %>
-
+```
+```ruby
 # view helper
 def print_attribute(text,attribute)
   name = content_tag :strong, text
@@ -33,11 +34,11 @@ def print_attribute(text,attribute)
 end
 ```
 
-This is better, but gets messy when I needed to change the formatting on some attributes. And some attributes needed to be printed in a different format (percentages, dollar values, etc).
+This is better, but gets messy when I needed to change the formatting on some attributes and other attributes needed to be printed in a different format (percentages, dollar values, etc).
 
-The solution I came up with would let me easily define a hash of attributes and titles.
+I wanted the solution to be as easy as defining hash of attributes and titles. They way I could just grab my attributes:
 
-```
+```ruby
 # view helper
 def all_attributes(object)
   {
@@ -47,20 +48,18 @@ def all_attributes(object)
 end
 ```
 
-Some of the "requirements" for this was that we needed to print out some attributes as just numbers (37), some had additional information that needed to go with the attribute ("34 ft."), and some just needed to be strings. In some some spots of the application we needed to split the attributes up, so by having a single method to define which attributes to get, it simplified the process.
+In order to define the additional information I created some `_string` methods which would return the right format or nil (which would get ignored later). For example:
 
-In order to define the additional information we created some `_string` methods which would return the right format or nil (which would get ignored later).
-
-```
+```ruby
 def another_attribute_string
   return nil if another_attribute.blank?
   "#{another_attribute} ft."
 end
 ```
 
-Then we needed to create the method to convert the hashes above. I wanted to be able to control the way they got printed in the view (not having to deal with making sure user attributes where html safe).
+I wanted to be able to control the way they got printed in the view since it changed depending on which view I was in. My goal was to be able to write the following.
 
-```
+```erb
 <% a = all_attributes_for(@listing) %>
 <% attributes_for_view(@listing,a).each do |key,value| %>
   <li>
@@ -70,9 +69,9 @@ Then we needed to create the method to convert the hashes above. I wanted to be 
 <% end %>
 ```
 
-Therefore the method just needed to return the hash:
+Thus the method needed to return a hash which had the correct label (key) and value (value).
 
-```
+```ruby
 def attributes_for_view(obj,attributes)
   # This first inject will return the hash we want, with the value
   # of the label as the key and the attribute as the value
@@ -83,13 +82,13 @@ def attributes_for_view(obj,attributes)
     value = attribute_pair[0].split(".").inject(obj) do |obj, attribute|
       obj.send(attribute)
     end
-  
+
     # Skip this value if it is nil
     unless value.nil? 
       # Strings we want to keep as is
       if value.is_a?(String) && !value.blank?
         r[attribute_pair[1]] = value
-      
+  
       # For us, most of our numbers where dollar values. 
       # So rather than creating a custom `_string` method for each, 
       # it was easier to handle the case where the number 
@@ -98,11 +97,11 @@ def attributes_for_view(obj,attributes)
         r[attribute_pair[1]] = number_to_currency(value)
       end
     end
-    
+
     # return the hash to continue building
     r
   end
 end
 ```
 
-A couple injects later and we have a clean function that does exactly what we want.
+A couple injects later I have a clean function that does exactly what I wanted.

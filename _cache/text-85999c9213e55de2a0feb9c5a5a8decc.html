@@ -1,0 +1,11 @@
+<div class="highlight"><pre><code class="text"># in the view
+&lt;%= print_attribute(&quot;Attribute Label&quot;,@object.my_attribute) %&gt;
+
+# view helper
+def print_attribute(text,attribute)
+  name = content_tag :strong, text
+  prop = content_tag :span, attribute
+  content_tag :li, name + prop
+end
+</code></pre>
+</div>

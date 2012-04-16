@@ -1,0 +1,32 @@
+<div class="highlight"><pre><code class="text">def attributes_for_view(obj,attributes)
+  # This first inject will return the hash we want, with the value
+  # of the label as the key and the attribute as the value
+  attributes.to_a.inject({}) do |r,attribute_pair|
+    # In order to do this, we first need to get the attribute.
+    # We do the split in order to get nested objects. But we are
+    # always starting with our root object, `obj`.
+    value = attribute_pair[0].split(&quot;.&quot;).inject(obj) do |obj, attribute|
+      obj.send(attribute)
+    end
+
+    # Skip this value if it is nil
+    unless value.nil? 
+      # Strings we want to keep as is
+      if value.is_a?(String) &amp;&amp; !value.blank?
+        r[attribute_pair[1]] = value
+
+      # For us, most of our numbers where dollar values. 
+      # So rather than creating a custom `_string` method for each, 
+      # it was easier to handle the case where the number 
+      # shouldnt&#39; be a dollar value.
+      elsif value.is_a?(Integer) &amp;&amp; value &gt; 0
+        r[attribute_pair[1]] = number_to_currency(value)
+      end
+    end
+
+    # return the hash to continue building
+    r
+  end
+end
+</code></pre>
+</div>
