@@ -35,4 +35,4 @@ http://stackoverflow.com/questions/6201339/a-clean-system-for-github-pages-with-
 
 ## Using post-commit to compile site for gh-pages
 
-https://gist.github.com/2628759
+https://gist.github.com/2628759 
