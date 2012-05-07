@@ -28,11 +28,6 @@ all tags should be plural otherwise
 
 http://www.google.com/webfonts#UsePlace:use/Collection:Tenor+Sans|Cousine|Crimson+Text
 
-To generate the site from master to gh-pages 
+## Git hook to deploy
 
-http://stackoverflow.com/questions/6201339/a-clean-system-for-github-pages-with-local-plugins
-
-
-## Using post-commit to compile site for gh-pages
-
-https://gist.github.com/2628759 
+https://gist.github.com/2628759#comments
