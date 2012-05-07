@@ -4,3 +4,4 @@ Thumbs.db
 !.gitkeep
 
 .sass-cache/*
+_site/*
