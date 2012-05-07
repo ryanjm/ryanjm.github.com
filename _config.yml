@@ -1,8 +1,0 @@
-permalink: pretty
-auto: true
-pygments: true
-var:
-  home_path: /
-  archive_path: /archive/
-  categories_path : /categories/
-  tags_path : /tags/
