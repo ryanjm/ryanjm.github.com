@@ -30,4 +30,4 @@ http://www.google.com/webfonts#UsePlace:use/Collection:Tenor+Sans|Cousine|Crimso
 
 ## Git hook to deploy
 
-https://gist.github.com/2628759#comments 
+https://gist.github.com/2628759#comments
