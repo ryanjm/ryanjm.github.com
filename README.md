@@ -20,7 +20,7 @@ Other
 
 ## Tags
 
-`front` - put on front page 
+`front` - put on front page
 
 All tags should be plural otherwise
 
