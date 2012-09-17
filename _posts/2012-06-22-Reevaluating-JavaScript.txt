@@ -1,0 +1,16 @@
+---
+layout: post
+category: code
+tags: [front]
+---
+
+Over the past couple weeks I've gone through a couple interviews and one thing was evident: I needed to relearn JavaScript. I'm proficient with jQuery and have helped out numerous people with JS related issues in the past, but if you were to ask me what are the different way of creating objects and how are closures used, I'd have to tell you I don't know.
+
+Douglas Crockford, one of the maintainers of JavaScript, has an article about how JS is [The World's Most Misunderstood Program Language](http://www.crockford.com/javascript/javascript.html). In it he talks about parts of the language that people don't understand. I want to pull out a few quotes and learn from them.
+
+> JavaScript...has arrays instead of lists and objects instead of property lists. Functions are first class. It has closures. You get lambdas without having to balance all those parens.
+
+**Arrays vs lists**  
+For those who don't know, this is a simple CS issue. Short version: lists are better. As simple as possible: memory is like a rows of buckets, each with their own address. Array's are usually implemented such that you are grabbing a row of buckets, based on their address. If you want the first object, you like at your beginning address. If you want the second object, you look at the beginning address + 1. Lists is short for linked lists. Basically 
+
+just put in links for each
