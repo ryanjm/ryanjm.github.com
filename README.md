@@ -20,9 +20,9 @@ Other
 
 ## Tags
 
-front - put on front page
+`front` - put on front page
 
-all tags should be plural otherwise
+All tags should be plural otherwise
 
 ## Fonts
 
