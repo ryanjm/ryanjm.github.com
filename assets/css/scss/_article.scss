@@ -18,10 +18,13 @@ h2.title {
   border-radius:0 0 5px 5px;
 }
   
-code {
+.highlight {
 	background:#f5f5f5;
-	padding:1px;
+	padding: 2px 10px;
 	border:1px solid #ccc;
+  @include rounded(3px);
+  font-size: 14px;
+  margin: 10px 0;
 }
 pre code {
 	padding:0;

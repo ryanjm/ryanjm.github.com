@@ -17,7 +17,7 @@ class Redcarpet2Markdown < Redcarpet::Render::HTML
   end
 
   def add_code_tags(code, lang)
-    code.sub(/<pre>/, "<pre><code class=\"#{lang}\">").
+    code.sub(/<pre>/, "<pre><code class=\"#{lang} codehilite\">").
          sub(/<\/pre>/, "</code></pre>")
   end
 

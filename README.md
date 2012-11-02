@@ -31,3 +31,7 @@ http://www.google.com/webfonts#UsePlace:use/Collection:Tenor+Sans|Cousine|Crimso
 ## Git hook to deploy
 
 https://gist.github.com/2628759#comments
+
+## Other
+
+I'm using [Redcarpet 2 vs Jekyll-plugins](https://github.com/nono/Jekyll-plugins). And there is a dependency on [pygments](http://pygments.org/download/).
