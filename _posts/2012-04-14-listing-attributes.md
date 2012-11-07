@@ -1,7 +1,6 @@
 ---
 layout: post
-category: code
-tags: [front, ruby, rails]
+tags: [programming, ruby, rails]
 ---
 
 This past week I was working on a Ruby on Rails project where I needed to list out a lot of attributes of an object. The difficult part came in the fact that I didn't want to display the attribute if it wasn't set or was 0.

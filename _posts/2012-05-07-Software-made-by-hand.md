@@ -1,7 +1,6 @@
 ---
 layout: post
-category: code
-tags: [front]
+tags: [programming]
 ---
 
 Scott Porad writes about why software is hard:

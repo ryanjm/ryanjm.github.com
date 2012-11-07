@@ -1,7 +1,6 @@
 ---
 layout: post
-category: life
-tags: [front]
+tags: [update]
 ---
 
 Here are some of the great articles I've come across this week.

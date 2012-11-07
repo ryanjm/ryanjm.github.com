@@ -1,7 +1,6 @@
 ---
 layout: post
-category: other
-tags: [dates, budget]
+tags: [update, random, budget]
 ---
 
 M and I try to go on a date every week or two. I've never been good about coming up with new things for us to try. My creativity extends to the newest movie or nearest bowling alley. Last night I suggested Dave and Buster's. I felt like after that experience I should write down two of the date lessons M and I have learned in 4 months of marriage.

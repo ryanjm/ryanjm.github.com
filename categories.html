@@ -1,0 +1,19 @@
+---
+layout: page
+title: Categories
+header: Categories
+---
+
+
+{% for category in site.categories %} 
+<h2 id="{{ category[0] }}-ref">
+  <a href="{{category[0]}}">
+    {{ category[0] | join: "/" }}
+  </a>
+</h2>
+  <ul class="archive indent">
+    {% assign pages_list = category[1] %}
+    {% include pages_list.html %}
+  </ul>
+{% endfor %}
+

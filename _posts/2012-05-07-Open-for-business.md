@@ -1,7 +1,6 @@
 ---
 layout: post
-category: other
-tags: [front]
+tags: [update]
 ---
 
 Last week was the end of my position at [Nelson Cash](http://nesloncash.com). After working with the team there for a year, I was able to see them grow from 4 people meeting up in coffee shops, to 10 people moving into a new studio with custom desks. It was a privilege working with some of the best designers in the city.

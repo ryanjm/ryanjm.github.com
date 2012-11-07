@@ -1,7 +1,6 @@
 ---
 layout: post
-category: code
-tags: [front, js, jQuery]
+tags: [programming, js, jQuery]
 ---
 
 My mindset on how to use and develop in jQuery has just changed dramatically. I watched Yehuda Katz's video on [Evented Programming](http://jquery14.com/day-11). Basically the idea he presents boils down to asking:
