@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  
+	<title>Listing Attributes | RyanJM</title>
+  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans|Cousine|Crimson+Text' rel='stylesheet' type='text/css'>
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/autumn.css" rel="stylesheet" type="text/css" media="all">
+	
+	<link href='http://www.myopenid.com/server' rel='openid.server' />
+  <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
+</head>
+<body>
+  <div class="container">
+    <div class="post">
+  
+  <h1>Listing Attributes</h1>
+
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>This past week I was working on a Ruby on Rails project where I needed to list out a lot of attributes of an object. The difficult part came in the fact that I didn&#39;t want to display the attribute if it wasn&#39;t set or was 0.</p>
+
+<p>Originally I had:</p>
+<div class="highlight"><pre><code class="erb codehilite"><span class="cp">&lt;%</span> <span class="k">if</span> <span class="vi">@object</span><span class="o">.</span><span class="n">my_attribute</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="vi">@object</span><span class="o">.</span><span class="n">my_attribute</span><span class="o">.</span><span class="n">blank?</span> <span class="cp">%&gt;</span><span class="x">  </span>
+<span class="x">  &lt;li&gt;  </span>
+<span class="x">    &lt;strong&gt;Attribute Label&lt;/strong&gt;  </span>
+<span class="x">    &lt;span&gt;</span><span class="cp">&lt;%=</span> <span class="vi">@object</span><span class="o">.</span><span class="n">my_attribute</span> <span class="cp">%&gt;</span><span class="x">&lt;/span&gt;</span>
+<span class="x">  &lt;/li&gt;  </span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre>
+</div>
+
+<p>When you start talking about 25 or 30 attributes you are printing out, some of which are nested, this gets to be a really ugly view. </p>
+
+<p>The next step was to move this to a helper method.</p>
+<div class="highlight"><pre><code class="erb codehilite"><span class="cp">&lt;%#</span><span class="c"> in the view </span><span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%=</span> <span class="n">print_attribute</span><span class="p">(</span><span class="s2">&quot;Attribute Label&quot;</span><span class="p">,</span><span class="vi">@object</span><span class="o">.</span><span class="n">my_attribute</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre>
+</div>
+<div class="highlight"><pre><code class="ruby codehilite"><span class="c1"># view helper</span>
+<span class="k">def</span> <span class="nf">print_attribute</span><span class="p">(</span><span class="n">text</span><span class="p">,</span><span class="n">attribute</span><span class="p">)</span>
+  <span class="nb">name</span> <span class="o">=</span> <span class="n">content_tag</span> <span class="ss">:strong</span><span class="p">,</span> <span class="n">text</span>
+  <span class="n">prop</span> <span class="o">=</span> <span class="n">content_tag</span> <span class="ss">:span</span><span class="p">,</span> <span class="n">attribute</span>
+  <span class="n">content_tag</span> <span class="ss">:li</span><span class="p">,</span> <span class="nb">name</span> <span class="o">+</span> <span class="n">prop</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>This is better, but gets messy when I needed to change the formatting on some attributes and other attributes needed to be printed in a different format (percentages, dollar values, etc).</p>
+
+<p>I wanted the solution to be as easy as defining hash of attributes and titles. They way I could just grab my attributes:</p>
+<div class="highlight"><pre><code class="ruby codehilite"><span class="c1"># view helper</span>
+<span class="k">def</span> <span class="nf">all_attributes</span><span class="p">(</span><span class="n">object</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="s1">&#39;my_attribute&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Attribute Label&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;nested_object.another_attribute_string&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Another Attribute&#39;</span>
+  <span class="p">}</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>In order to define the additional information I created some <code>_string</code> methods which would return the right format or nil (which would get ignored later). For example:</p>
+<div class="highlight"><pre><code class="ruby codehilite"><span class="k">def</span> <span class="nf">another_attribute_string</span>
+  <span class="k">return</span> <span class="kp">nil</span> <span class="k">if</span> <span class="n">another_attribute</span><span class="o">.</span><span class="n">blank?</span>
+  <span class="s2">&quot;</span><span class="si">#{</span><span class="n">another_attribute</span><span class="si">}</span><span class="s2"> ft.&quot;</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>I wanted to be able to control the way they got printed in the view since it changed depending on which view I was in. My goal was to be able to write the following.</p>
+<div class="highlight"><pre><code class="erb codehilite"><span class="cp">&lt;%</span> <span class="n">a</span> <span class="o">=</span> <span class="n">all_attributes_for</span><span class="p">(</span><span class="vi">@listing</span><span class="p">)</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="cp">&lt;%</span> <span class="n">attributes_for_view</span><span class="p">(</span><span class="vi">@listing</span><span class="p">,</span><span class="n">a</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">key</span><span class="p">,</span><span class="n">value</span><span class="o">|</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;li&gt;</span>
+<span class="x">    </span><span class="cp">&lt;%=</span> <span class="n">content_tag</span> <span class="ss">:span</span><span class="p">,</span> <span class="n">key</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">    </span><span class="cp">&lt;%=</span> <span class="n">content_tag</span> <span class="ss">:strong</span><span class="p">,</span> <span class="n">value</span> <span class="cp">%&gt;</span><span class="x"></span>
+<span class="x">  &lt;/li&gt;</span>
+<span class="cp">&lt;%</span> <span class="k">end</span> <span class="cp">%&gt;</span><span class="x"></span>
+</code></pre>
+</div>
+
+<p>Thus the method needed to return a hash which had the correct label (key) and value (value).</p>
+<div class="highlight"><pre><code class="ruby codehilite"><span class="k">def</span> <span class="nf">attributes_for_view</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">attributes</span><span class="p">)</span>
+  <span class="c1"># This first inject will return the hash we want, with the value</span>
+  <span class="c1"># of the label as the key and the attribute as the value</span>
+  <span class="n">attributes</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">inject</span><span class="p">({})</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="p">,</span><span class="n">attribute_pair</span><span class="o">|</span>
+    <span class="c1"># In order to do this, we first need to get the attribute.</span>
+    <span class="c1"># We do the split in order to get nested objects. But we are</span>
+    <span class="c1"># always starting with our root object, `obj`.</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">attribute_pair</span><span class="o">[</span><span class="mi">0</span><span class="o">].</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">obj</span><span class="p">,</span> <span class="n">attribute</span><span class="o">|</span>
+      <span class="n">obj</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">attribute</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="c1"># Skip this value if it is nil</span>
+    <span class="k">unless</span> <span class="n">value</span><span class="o">.</span><span class="n">nil?</span> 
+      <span class="c1"># Strings we want to keep as is</span>
+      <span class="k">if</span> <span class="n">value</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">String</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">value</span><span class="o">.</span><span class="n">blank?</span>
+        <span class="n">r</span><span class="o">[</span><span class="n">attribute_pair</span><span class="o">[</span><span class="mi">1</span><span class="o">]]</span> <span class="o">=</span> <span class="n">value</span>
+
+      <span class="c1"># For us, most of our numbers where dollar values. </span>
+      <span class="c1"># So rather than creating a custom `_string` method for each, </span>
+      <span class="c1"># it was easier to handle the case where the number </span>
+      <span class="c1"># shouldnt&#39; be a dollar value.</span>
+      <span class="k">elsif</span> <span class="n">value</span><span class="o">.</span><span class="n">is_a?</span><span class="p">(</span><span class="nb">Integer</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">r</span><span class="o">[</span><span class="n">attribute_pair</span><span class="o">[</span><span class="mi">1</span><span class="o">]]</span> <span class="o">=</span> <span class="n">number_to_currency</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+      <span class="k">end</span>
+    <span class="k">end</span>
+
+    <span class="c1"># return the hash to continue building</span>
+    <span class="n">r</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<p>A couple injects later I have a clean function that does exactly what I wanted.</p>
+
+  </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+
+    
+    <span class="tags">Tagged: 
+      
+        <a href="/tags/programming">programming</a>,
+      
+        <a href="/tags/ruby">ruby</a>,
+      
+        <a href="/tags/rails">rails</a>
+      
+    </span>
+    
+
+    <span class="post-date">Written: 14 April 2012</span>
+
+    
+    <span class="previous"><a href="/2012/03/07/jQuery-development/">Jquery Development</a></span>
+    
+
+    
+    <span class="next"><a href="/2012/05/07/Open-for-business/">Open For Business</a></span>
+    
+  </div>
+  
+</div>
+
+
+
+
+    <div id="push"> </div>
+  </div>
+  <footer>
+    <div>
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
+        founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>. 
+        I am a Ruby on Rails and Objective-C developer.</p>
+      <p>
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+
+<script src="assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28520278-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

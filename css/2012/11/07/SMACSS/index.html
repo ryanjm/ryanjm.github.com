@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  
+	<title>Smacss | RyanJM</title>
+  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans|Cousine|Crimson+Text' rel='stylesheet' type='text/css'>
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/autumn.css" rel="stylesheet" type="text/css" media="all">
+	
+	<link href='http://www.myopenid.com/server' rel='openid.server' />
+  <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
+</head>
+<body>
+  <div class="container">
+    <div class="post">
+  
+  <h1>Smacss</h1>
+
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>I&#39;ve been working on redoing the <a href="http://orangeqc.com" title="OrangeQC">OrangeQC</a> website the past couple weeks and it was good to put into practice some fo the stuff I was learning at the end of my time at Nelson Cash. In my quest for css best practices I came across <a href="http://oocss.org/">OOCSS</a> and <a href="http://smacss.com/">SMACSS</a>. Both help set a tone for what you should be trying to accomplish with CSS: reusable code. OOCSS feels more like theory to me, where as Smacss provides some applicatable ideas, such as a file structure:</p>
+<div class="highlight"><pre><code class="text codehilite">/css
+|- base.css
+|- layout.css
+|- module.css
+|- state.css
+|- theme.css
+</code></pre>
+</div>
+
+<p><code>Base</code> is for how your elements should look by themselves, no additional classes. <code>Layout</code> is for laying out larger elements on the page. <code>Module</code> is for smaller elements that will be reused on multiple pages. <code>State</code> is for handling the various states those modules can be in. <code>Theme</code> is for modifying the look if you need a different style.</p>
+
+<p>Using SASS&#39;s partials I&#39;ve included all of these files into one which has worked well. I haven&#39;t found much of a need for state, OrangeQC page is pretty static, so I&#39;ve taken it out. I&#39;ve also added a mixins class so I can put my sass mixins in one spot. I&#39;ve also been using <a href="https://github.com/thoughtbot/bourbon">Bourbon</a> for some standard mixins which works out great.</p>
+
+<p>As with everything it takes practice knowing how to layout modules and when/where/how to refactor. I really just need more practice with it. I was able to redo the layout of this site with Smaccs within a couple hours.</p>
+
+<p>There is some debate of if you should add additional classes to your html in order to style elements or if you should use sass to mixin your various styles for targetted elements. I&#39;m still figuring out pros/cons, but for my projects I have full control over the html so I&#39;d rather add a couple extra classes where needed and reduce the size of my css.</p>
+
+<p>If you are getting tired of targeting every element on the page and doing custom styling for everything, check out SMACSS and OOCSS, they&#39;ll speed up coding and make life easier. Things that would have taking me a day or two to do my old way is only taking me a couple hours now.</p>
+
+  </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+    <span class="post-category">See more acticles about <a href="/topics/css">css</a></span>
+    
+
+    
+    <span class="tags">Tagged: 
+      
+        <a href="/tags/programming">programming</a>,
+      
+        <a href="/tags/css">css</a>
+      
+    </span>
+    
+
+    <span class="post-date">Written: 07 November 2012</span>
+
+    
+    <span class="previous"><a href="/2012/06/06/Article-Roundup/">Article Roundup</a></span>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+    <div id="push"> </div>
+  </div>
+  <footer>
+    <div>
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
+        founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>. 
+        I am a Ruby on Rails and Objective-C developer.</p>
+      <p>
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+
+<script src="assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28520278-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

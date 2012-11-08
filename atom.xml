@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+ <title>Tom Preston-Werner</title>
+ <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
+ <link href="http://www.ryanjm.com/"/>
+ <updated>2012-11-08T09:16:45-07:00</updated>
+ <id>http://www.ryanjm.com/</id>
+ <author>
+   <name>Ryan Mathews</name>
+   <email>ryan@ryanjm.com</email>
+ </author>
+
+ 
+ <entry>
+   <title>Smacss</title>
+   <link href="http://www.ryanjm.com/css/2012/11/07/SMACSS/"/>
+   <updated>2012-11-07T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/css/2012/11/07/SMACSS</id>
+   <content type="html">&lt;p&gt;I&amp;#39;ve been working on redoing the &lt;a href=&quot;http://orangeqc.com&quot; title=&quot;OrangeQC&quot;&gt;OrangeQC&lt;/a&gt; website the past couple weeks and it was good to put into practice some fo the stuff I was learning at the end of my time at Nelson Cash. In my quest for css best practices I came across &lt;a href=&quot;http://oocss.org/&quot;&gt;OOCSS&lt;/a&gt; and &lt;a href=&quot;http://smacss.com/&quot;&gt;SMACSS&lt;/a&gt;. Both help set a tone for what you should be trying to accomplish with CSS: reusable code. OOCSS feels more like theory to me, where as Smacss provides some applicatable ideas, such as a file structure:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;/css
+|- base.css
+|- layout.css
+|- module.css
+|- state.css
+|- theme.css
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;Base&lt;/code&gt; is for how your elements should look by themselves, no additional classes. &lt;code&gt;Layout&lt;/code&gt; is for laying out larger elements on the page. &lt;code&gt;Module&lt;/code&gt; is for smaller elements that will be reused on multiple pages. &lt;code&gt;State&lt;/code&gt; is for handling the various states those modules can be in. &lt;code&gt;Theme&lt;/code&gt; is for modifying the look if you need a different style.&lt;/p&gt;
+
+&lt;p&gt;Using SASS&amp;#39;s partials I&amp;#39;ve included all of these files into one which has worked well. I haven&amp;#39;t found much of a need for state, OrangeQC page is pretty static, so I&amp;#39;ve taken it out. I&amp;#39;ve also added a mixins class so I can put my sass mixins in one spot. I&amp;#39;ve also been using &lt;a href=&quot;https://github.com/thoughtbot/bourbon&quot;&gt;Bourbon&lt;/a&gt; for some standard mixins which works out great.&lt;/p&gt;
+
+&lt;p&gt;As with everything it takes practice knowing how to layout modules and when/where/how to refactor. I really just need more practice with it. I was able to redo the layout of this site with Smaccs within a couple hours.&lt;/p&gt;
+
+&lt;p&gt;There is some debate of if you should add additional classes to your html in order to style elements or if you should use sass to mixin your various styles for targetted elements. I&amp;#39;m still figuring out pros/cons, but for my projects I have full control over the html so I&amp;#39;d rather add a couple extra classes where needed and reduce the size of my css.&lt;/p&gt;
+
+&lt;p&gt;If you are getting tired of targeting every element on the page and doing custom styling for everything, check out SMACSS and OOCSS, they&amp;#39;ll speed up coding and make life easier. Things that would have taking me a day or two to do my old way is only taking me a couple hours now.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Article Roundup</title>
+   <link href="http://www.ryanjm.com/2012/06/06/Article-Roundup/"/>
+   <updated>2012-06-06T00:00:00-06:00</updated>
+   <id>http://www.ryanjm.com/2012/06/06/Article-Roundup</id>
+   <content type="html">&lt;p&gt;Here are some of the great articles I&amp;#39;ve come across this week.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.kalzumeus.com/2012/05/31/can-i-get-your-email/&quot;&gt;You Should Probably Send More Email Than You Do&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Patrick McKenzie gets into why it can be valuable to get into a user&amp;#39;s inbox. It is a long article, but has enough nuggets of wisdom to warrant the time.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.extendslogic.com/business/what-i-learned-from-increasing-my-prices/&quot;&gt;What I Learned From Increasing My Prices&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ruben Gamez talks about using client surveys and phone calls to figure out how to split pricing tiers and how to charge for each.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.webdesignerdepot.com/2012/06/ui-vs-ux-whats-the-difference/?utm_source=loopinsight.com&amp;amp;utm_medium=referral&amp;amp;utm_campaign=Feed%3A+loopinsight%2FKqJb+%28The+Loop%29&quot;&gt;UI vs UX: what&amp;#39;s the difference?&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;UI is the saddle, the stirrups, and the reigns.&lt;br&gt;
+UX is the feeling you get being able to ride the horse, and rope your cattle.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Dain Miller talks about the differences of UI and UX and how they often get confused. I think he provides some great definitions and good food for thought for any small company.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Software Made By Hand</title>
+   <link href="http://www.ryanjm.com/2012/05/07/Software-made-by-hand/"/>
+   <updated>2012-05-07T00:00:00-06:00</updated>
+   <id>http://www.ryanjm.com/2012/05/07/Software-made-by-hand</id>
+   <content type="html">&lt;p&gt;Scott Porad writes about why software is hard:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;First, name one other thing in the world, he said, that is used by so many people and which is created entirely by hand?  Stuff that is made by hand is hard to make, and even more hard to make well, and tends to be less sturdy than things made by machines.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Open For Business</title>
+   <link href="http://www.ryanjm.com/2012/05/07/Open-for-business/"/>
+   <updated>2012-05-07T00:00:00-06:00</updated>
+   <id>http://www.ryanjm.com/2012/05/07/Open-for-business</id>
+   <content type="html">&lt;p&gt;Last week was the end of my position at &lt;a href=&quot;http://nesloncash.com&quot;&gt;Nelson Cash&lt;/a&gt;. After working with the team there for a year, I was able to see them grow from 4 people meeting up in coffee shops, to 10 people moving into a new studio with custom desks. It was a privilege working with some of the best designers in the city.&lt;/p&gt;
+
+&lt;p&gt;I received great experience working with project managers, designers, and clients in how to (and not to) run projects. Consulting is a continual learning process and Nelson Cash provided me with the best education I could ask for.&lt;/p&gt;
+
+&lt;p&gt;For now I&amp;#39;m still in Chicago. I&amp;#39;m looking forward to networking with startups and consulting for them on iOS and Ruby on Rails projects. Chicago might not be the first city you think of when considering startups, but there is a great community here and I&amp;#39;m excited at the opportunities to help where I can.&lt;/p&gt;
+
+&lt;p&gt;If you&amp;#39;re looking for a developer, please reach out: &lt;a href=&quot;mailto:ryan@miyanhq.com&quot;&gt;ryan@miyanhq.com&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Listing Attributes</title>
+   <link href="http://www.ryanjm.com/2012/04/14/listing-attributes/"/>
+   <updated>2012-04-14T00:00:00-06:00</updated>
+   <id>http://www.ryanjm.com/2012/04/14/listing-attributes</id>
+   <content type="html">&lt;p&gt;This past week I was working on a Ruby on Rails project where I needed to list out a lot of attributes of an object. The difficult part came in the fact that I didn&amp;#39;t want to display the attribute if it wasn&amp;#39;t set or was 0.&lt;/p&gt;
+
+&lt;p&gt;Originally I had:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;erb codehilite&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_attribute&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blank?&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;  &lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;  &amp;lt;li&amp;gt;  &lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    &amp;lt;strong&amp;gt;Attribute Label&amp;lt;/strong&amp;gt;  &lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    &amp;lt;span&amp;gt;&lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;vi&quot;&gt;@object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_attribute&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;  &amp;lt;/li&amp;gt;  &lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;When you start talking about 25 or 30 attributes you are printing out, some of which are nested, this gets to be a really ugly view. &lt;/p&gt;
+
+&lt;p&gt;The next step was to move this to a helper method.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;erb codehilite&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%#&lt;/span&gt;&lt;span class=&quot;c&quot;&gt; in the view &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;print_attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;Attribute Label&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@object&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;my_attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby codehilite&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# view helper&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content_tag&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;prop&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content_tag&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;content_tag&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:li&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prop&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This is better, but gets messy when I needed to change the formatting on some attributes and other attributes needed to be printed in a different format (percentages, dollar values, etc).&lt;/p&gt;
+
+&lt;p&gt;I wanted the solution to be as easy as defining hash of attributes and titles. They way I could just grab my attributes:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby codehilite&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# view helper&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;all_attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;my_attribute&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Attribute Label&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&amp;#39;nested_object.another_attribute_string&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;Another Attribute&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In order to define the additional information I created some &lt;code&gt;_string&lt;/code&gt; methods which would return the right format or nil (which would get ignored later). For example:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby codehilite&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;another_attribute_string&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;another_attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blank?&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;another_attribute&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt; ft.&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I wanted to be able to control the way they got printed in the view since it changed depending on which view I was in. My goal was to be able to write the following.&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;erb codehilite&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;all_attributes_for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@listing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attributes_for_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;vi&quot;&gt;@listing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;  &amp;lt;li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content_tag&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:span&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;content_tag&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;x&quot;&gt;  &amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;cp&quot;&gt;&amp;lt;%&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Thus the method needed to return a hash which had the correct label (key) and value (value).&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby codehilite&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;attributes_for_view&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attributes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# This first inject will return the hash we want, with the value&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# of the label as the key and the attribute as the value&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;attributes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({})&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attribute_pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# In order to do this, we first need to get the attribute.&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# We do the split in order to get nested objects. But we are&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# always starting with our root object, `obj`.&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute_pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;do&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;obj&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Skip this value if it is nil&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;unless&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nil?&lt;/span&gt; 
+      &lt;span class=&quot;c1&quot;&gt;# Strings we want to keep as is&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_a?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;blank?&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attribute_pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;
+
+      &lt;span class=&quot;c1&quot;&gt;# For us, most of our numbers where dollar values. &lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# So rather than creating a custom `_string` method for each, &lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# it was easier to handle the case where the number &lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;# shouldnt&amp;#39; be a dollar value.&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;elsif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;is_a?&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;attribute_pair&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;number_to_currency&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# return the hash to continue building&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;A couple injects later I have a clean function that does exactly what I wanted.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Jquery Development</title>
+   <link href="http://www.ryanjm.com/2012/03/07/jQuery-development/"/>
+   <updated>2012-03-07T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/2012/03/07/jQuery-development</id>
+   <content type="html">&lt;p&gt;My mindset on how to use and develop in jQuery has just changed dramatically. I watched Yehuda Katz&amp;#39;s video on &lt;a href=&quot;http://jquery14.com/day-11&quot;&gt;Evented Programming&lt;/a&gt;. Basically the idea he presents boils down to asking:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;If this was natively supported, what would it look like?&lt;/li&gt;
+&lt;li&gt;Then writing the code to get the functionality you want, based on that.&lt;/li&gt;
+&lt;li&gt;Then write the code to implement the &amp;quot;browser code&amp;quot;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Amazing. This creates very reusable code and simplifies the code you do write.&lt;/p&gt;
+
+&lt;p&gt;I came across this video from Dan Webb&amp;#39;s article on &lt;a href=&quot;http://danwebb.net/2010/1/27/put-that-data-attribute-away-son-you-might-hurt-someone&quot;&gt;data-* attributes&lt;/a&gt;. It is also a great article and helps remember that we should try to keep the html as semantic as possible.&lt;/p&gt;
+
+&lt;p&gt;Great resources to checkout.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Frameworks</title>
+   <link href="http://www.ryanjm.com/2012/03/03/frameworks/"/>
+   <updated>2012-03-03T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/2012/03/03/frameworks</id>
+   <content type="html">&lt;p&gt;I don&amp;#39;t have much to add to this discussion right now, but I just wanting to point out that the next two years is going to be pretty exciting for the web development community. I think some great frameworks and design patterns will be built around CSS, JS, and API&amp;#39;s. We already have some great frameworks for the server side, so extending that to client side will fill out the stack.&lt;/p&gt;
+
+&lt;p&gt;I think this will be a huge undercurrent in the ability for more applications to be moved to the web.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Technology In Classrooms</title>
+   <link href="http://www.ryanjm.com/2012/01/25/technology-in-classrooms/"/>
+   <updated>2012-01-25T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/2012/01/25/technology-in-classrooms</id>
+   <content type="html">&lt;p&gt;Cringely gets at a good point about student motivation and it&amp;#39;s impact on learning. He is quoting a reader:&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;quot;...I&amp;#39;m finding that the real key to student success is not so much how you teach but how you go about motivating students to want to learn...&amp;quot;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This plays a huge impact in the university where many professors are there for the research and not the students.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;But not every school can be a Stanford and even there, as at many research universities, much of the faculty doesn&amp;#39;t really want to teach.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is a good reminder for myself to cultivate the motivation to learn as much as scheduling time to learn.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Producing Good Work</title>
+   <link href="http://www.ryanjm.com/2012/01/24/producing-good-work/"/>
+   <updated>2012-01-24T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/2012/01/24/producing-good-work</id>
+   <content type="html">&lt;p&gt;From an article about David Oglivy and his habits as a copywriter.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;nbsp;2. I spend a long time studying the precedents. I look at every advertisement which has appeared for competing products during the past 20 years. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In development I know it is important to plan, but this puts a whole new view on it.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;nbsp;5. Before actually writing the copy, I write down ever concievable fact and selling idea. Then I get them organized and relate them to research and the copy platform. &lt;/p&gt;
+
+&lt;p&gt;&amp;nbsp;12. I am a lousy copywriter, but I am a good editor. So I go to work editing my own draft. After four or five editings, it looks good enough to show to the client. If the client changes the copy, I get angry-because I took a lot of trouble writing it, and what I wrote I wrote on purpose.&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>New Site</title>
+   <link href="http://www.ryanjm.com/2012/01/21/new-site/"/>
+   <updated>2012-01-21T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/2012/01/21/new-site</id>
+   <content type="html">&lt;p&gt;I&amp;#39;m working on this site. Been meaning to get back into writing for awhile. So we&amp;#39;ll see how this goes. More to come.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ 
+</feed>
