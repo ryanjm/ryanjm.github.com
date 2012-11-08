@@ -1,4 +1,69 @@
-@import "bourbon";
-@import "neat";
+@import "neat/neat-helpers"; // or "neat/neat-helpers" when not in Rails
+
+// Change the grid settings
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 6;
+$max-width: em(700);
+
+// Define your breakpoints
+$mobile: new-breakpoint(max-width 480px 4);
+$tablet: new-breakpoint(max-width 768px 8);
+
+@import "bourbon/bourbon";
+@import "neat/neat";
 
 
+@mixin main-font { font-family: 'Crimson Text', serif; }
+@mixin code-font { font-family: 'Cousine', sans-serif; }
+@mixin heading-font { font-family: 'Tenor Sans', sans-serif}
+
+
+@mixin border-arrow($width:3,$height:4,$color:black, $direction:"left"){
+  content: '';
+  width: 0; 
+  height: 0;
+  position: absolute;
+  
+  @if $direction == "left" {
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+    border-right: $width solid $color;
+    left: 0;
+    top: 50%;
+    margin-top: -1 * $height;
+  } @else if $direction == "right" {
+    content: '';
+    width: 0; 
+    height: 0;
+    border-top: $height solid transparent;
+    border-bottom: $height solid transparent;
+    border-left: $width solid $color;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -1 * $height;
+  } @else if $direction == "top" {
+    content: '';
+    width: 0; 
+    height: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-bottom: $height solid $color;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -2 * $width;
+  } @else if $direction == "bottom" {
+    content: '';
+    width: 0; 
+    height: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+    border-top: $height solid $color;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    margin-left: -2 * $width;
+  }
+}

@@ -1,0 +1,17 @@
+---
+layout: page
+title: Topics
+---
+
+<div class="pages-list">
+  {% for category in site.categories %} 
+  <h2>
+    <a href="{{ category[0] | join: "/" }}">{{ category[0] | join: "/" }}</a>
+  </h2>
+  <ol>
+    {% assign pages_list = category[1] %}
+    {% include pages_list.html %}
+  </ol>
+  {% endfor %}
+</div>
+

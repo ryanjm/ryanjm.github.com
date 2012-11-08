@@ -1,0 +1,33 @@
+// http://ryanfait.com/sticky-footer/
+
+
+html, body { height: 100%;}
+
+.container {  
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -1 * $footer_height;
+
+  @include outer-container;
+}
+
+footer, #push {
+	height: $footer_height;
+} 
+
+footer {
+  position: relative;
+  z-index: 100;
+}
+
+#push { margin-top: 60px; }
+
+/*Opera Fix*/
+//body:before {/* thanks to Maleika (Kohoutec)*/
+//content:"";
+//height:100%;
+//float:left;
+//width:0;
+//margin-top:-32767px;/* thank you Erik J - negate effect of float*/
+//}

@@ -1,0 +1,121 @@
+nav {
+  overflow: auto;
+  margin-top: 15px;
+
+  ul {
+    list-style-type: none;
+
+    li {
+      float: left;
+      margin: 4px 5px;
+
+      &:first-child { margin-left: 0; }
+
+      a {
+        padding: 4px 6px;
+        text-decoration: none;
+        background-color: $light-bg; 
+        display: block;
+        border: 1px solid darken($light-bg, 10%);
+        position: relative;
+
+        &:hover { 
+          color: $anchor-color;
+          background-color: darken($light-bg, 3%);
+        } 
+
+        &.current:after {
+          content: '';
+          width: 0; 
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 6px solid darken($light-bg, 30%);
+          position: absolute;
+          top: -3px;
+          left: 50%;
+          margin-left: -5px;
+        }
+          
+        
+        @include border-radius(2px);
+
+      }
+    }
+  }
+}
+
+ul.pages-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  li {
+    margin: 10px 0;
+
+    a {
+      font-size: 18px;
+    }
+
+    span {
+      margin-left: 20px;
+      color: lighten($default-color, 30%);
+      display: none;
+    }
+  }
+}
+
+div.pages-list {
+  h2 {
+    margin: 15px 0 0;
+
+    a { text-decoration: none; }
+  }
+
+  ul, ol { 
+    margin: 5px 0;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+}
+
+div.extra {
+  border-top: 1px solid $light-outline;
+  padding-top: 20px;
+  margin-top: 20px;
+
+  .tags, .post-category, .post-via, .post-source, .post-date {
+    font-size: 13px;
+  }
+
+  span.tags, span.post-category, span.post-date {
+    display: block;
+    margin: 1px 0;
+  }
+
+  .next, .previous {
+    display: block;
+    float: left;
+    margin: 20px 20px 0 0;
+  }
+
+  .next a {
+    position: relative;
+    padding-right: 10px;
+
+    &:after{
+      @include border-arrow(4px, 3px, $arrow-color, "right");
+    }
+  }
+
+  .previous a {
+    position: relative;
+    padding-left: 10px;
+
+    &:after{
+      @include border-arrow(4px, 3px, $arrow-color, "left");
+    }
+  }
+
+}

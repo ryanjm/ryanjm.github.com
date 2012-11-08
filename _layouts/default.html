@@ -2,7 +2,11 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  {% if page.title %}
 	<title>{{ page.title }} | RyanJM</title>
+  {% else %}
+  <title>RyanJM</title>
+  {% endif %}
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
@@ -14,37 +18,29 @@
   <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
 </head>
 <body>
-  <div id="wrap">
-    <div id="container">
-      <header>
-        <h1><a href="{{site.var.home_path}}">RyanJM</a></h1>
-      </header>
-      <nav>
-          <ul>
-            <li><a href="{{site.var.home_path}}">Home</a></li>
-            <li><a href="{{site.var.categories_path}}">Categories</a></li>
-          </ul>
-        
-
-      </nav>
-      <div class="content">
-  				{{ content }}
-  	  </div>
-	  
-    </div>  
+  <div class="container">
+    {{ content }}
     <div id="push"> </div>
   </div>
   <footer>
     <div>
-      <p class="about">Hi, my name is Ryan Mathews. I'm a 
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
         founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>. 
-        I mostly work with Ruby on Rails and Objective-C.</p>
+        I am a Ruby on Rails and Objective-C developer.</p>
+      <p>
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
     </div>
   </footer>
 
 {% if site.safe %}
   {% include production/analytics.html %}
 {% endif %}
+<script src="assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="assets/js/script.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];

@@ -2,8 +2,35 @@
 layout: default
 ---
 
-<div id="page">
-  <h1 class="title">{% if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h1>
+<header>
+  <h1><a href="{{site.var.home_path}}">RyanJM</a></h1>
+  <nav>
+    <ul>
+      {% if page.url == '/index.html' %}
+      <li><a href="{{site.var.home_path}}" class="current">Home</a></li>
+      {% else %}
+      <li><a href="{{site.var.home_path}}">Home</a></li>
+      {% endif %}
 
-  {{ content }}
+      {% if page.url == site.var.categories_path %}
+      <li><a href="{{site.var.categories_path}}" class="current">Topics</a></li>
+      {% else %}
+      <li><a href="{{site.var.categories_path}}">Topics</a></li>
+      {% endif %}
+
+      {% if page.url == site.var.tags_path %}
+      <li><a href="{{site.var.tags_path}}" class="current">Tags</a></li>
+      {% else %}
+      <li><a href="{{site.var.tags_path}}">Tags</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+</header>
+
+<div class="page">
+  <h2>{% if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %}</h2>
+
+  <div class="content">
+    {{ content }}
+  </div>
 </div>

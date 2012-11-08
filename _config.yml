@@ -4,8 +4,9 @@ markdown: redcarpet2
 var:
   home_path: /
   archive_path: /archive/
-  categories_path : /categories/
+  categories_path : /topics/
   tags_path : /tags/
+category_dir: "topics"
 redcarpet:
   extensions:
     ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]

@@ -1,13 +1,12 @@
 ---
-layout: default
-title: Home
+layout: page
 ---
 
-<ul class="pages_list">
+<ul class="pages-list">
   {% for page in site.posts %}
     <li>
-      <a href="{{page.url}}">{{page.title}}</a>
-      <span>{{page.date | date_to_string}}</span>
+      <a href="{{page.url}}" class="js-hover-show" data-show="{{page.id | remove:'/'}}">{{page.title}}</a>
+      <span class="{{page.id | remove:'/'}}">{{page.date | date_to_string}}</span>
     </li>
   {% endfor %}
 </ul>

@@ -1,0 +1,81 @@
+footer {
+  background-color: $light-bg;
+  
+  div {
+    @include outer-container;
+    padding: 20px 0;
+
+    // profile image
+    img {
+      @include border-radius(4px);
+      border: 2px solid darken($light-bg, 60%);
+      float: left;
+      margin-right: 20px;
+    }
+  }
+}
+
+// code boxes
+.highlight {
+	background:#f5f5f5;
+	padding: 2px 10px;
+	border:1px solid #ccc;
+  @include border-radius(3px);
+  margin: 10px 0;
+  display: inline-block;
+}
+
+// for inline code
+p code {
+	background:#f5f5f5;
+	border:1px solid #ccc;
+  @include border-radius(2px);
+  font-size: 12px;
+  padding: 1px;
+  line-height: 14px;
+}
+
+ul.tag-cloud {
+  list-style-type: none;
+  padding-left: 0;
+  overflow: auto;
+
+  li {
+    float: left;
+    margin: 10px 3px;
+
+    &:first-child { margin-left: 0; }
+    &:last-child { margin-right: 0; }
+
+    a {
+      text-decoration: none;
+      padding: 4px 6px;
+      border: 1px solid $light-outline;
+      @include border-radius(2px);
+
+      &:hover {
+        color: $anchor-color;
+        background-color: $light-bg;
+      }
+
+    }
+  }
+}
+
+// used inside a post
+a.back-link {
+  text-decoration: none;
+  position: relative;
+  border: 1px solid $light-outline;
+  padding: 3px 8px 3px 18px;
+  @include border-radius(2px);
+  margin: 10px 0;
+
+  &:hover { border-color: darken($light-outline, 10%); }
+
+  &:before {
+    @include border-arrow(4px, 4px, $arrow-color, "left");
+    left: 6px;
+  }
+}
+

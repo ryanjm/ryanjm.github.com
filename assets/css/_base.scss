@@ -1,0 +1,43 @@
+body {
+  color: $default-color;
+  @include main-font;
+  font-size: 16px;
+}
+
+a {
+  color: $anchor-color;
+
+  &:visited { color: $anchor-visited-color; }
+  &:hover { color: $anchor-hover-color; }
+}
+
+
+h1 {
+  @include heading-font;
+  font-size: 35px;
+  margin: 20px 0 10px;
+
+  a { text-decoration: none; }
+}
+
+h2 {
+  @include heading-font;
+  font-size: 30px;
+}
+
+h3 {
+  @include heading-font;
+  font-size: 20px;
+}
+
+code {
+  @include code-font;
+  font-size: 14px;
+}
+
+blockquote {
+  color: #2c2c2c;
+  border-left: 5px solid $light-outline;
+  margin: 1em 0;
+  padding-left: 30px;
+}

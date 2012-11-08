@@ -2,25 +2,49 @@
 layout: default
 ---
 
-<div id="post">
+<div class="post">
   
   <h1>{{ page.title }}</h1>
 
-  {{ content }}
+  <a href="{{site.var.home_path}}" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    {{ content }}
+  </div>
+  
+  <div class="extra">
+    {% if page.source[0] %}
+    <span class="post-source">Source: <a href="{{page.source[1]}}">{{page.source[0]}}</a></span>
+    {% endif %}
+
+    {% if page.via[0] %}
+    <span class="post-via">Via: <a href="{{page.via[1]}}">{{page.via[0]}}</a></span>
+    {% endif %}
+
+    {% if page.category %}
+    <span class="post-category">See more acticles about <a href="/topics/{{page.category}}">{{page.category}}</a></span>
+    {% endif %}
+
+    {% if page.tags %}
+    <span class="tags">Tagged: 
+      {% for tag in page.tags %}
+        <a href="/tags/{{tag}}">{{tag}}</a>{% unless page.tags.last == tag %},{% endunless %}
+      {% endfor %}
+    </span>
+    {% endif %}
+
+    <span class="post-date">Written: {{page.date | date_to_long_string }}</span>
+
+    {% if page.previous %}
+    <span class="previous"><a href="{{ page.previous.url }}">{{ page.previous.title }}</a></span>
+    {% endif %}
+
+    {% if page.next %}
+    <span class="next"><a href="{{ page.next.url }}">{{ page.next.title }}</a></span>
+    {% endif %}
+  </div>
   
 </div>
 
-<hr/>
 
-{% if page.previous %}
-    <span class="previous">Previous: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a></span>
-{% endif %}
-
-{% if page.previous && page.next %}
-<br/>
-{% endif %}
-
-{% if page.next %}
-    <span class="next">Next: <a href="{{ page.next.url }}">{{ page.next.title }}</a></span>
-{% endif %}
 
