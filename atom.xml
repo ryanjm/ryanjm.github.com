@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2012-11-08T09:16:45-07:00</updated>
+ <updated>2012-11-13T09:19:45-07:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
@@ -13,29 +13,61 @@
 
  
  <entry>
-   <title>Smacss</title>
-   <link href="http://www.ryanjm.com/css/2012/11/07/SMACSS/"/>
-   <updated>2012-11-07T00:00:00-07:00</updated>
-   <id>http://www.ryanjm.com/css/2012/11/07/SMACSS</id>
-   <content type="html">&lt;p&gt;I&amp;#39;ve been working on redoing the &lt;a href=&quot;http://orangeqc.com&quot; title=&quot;OrangeQC&quot;&gt;OrangeQC&lt;/a&gt; website the past couple weeks and it was good to put into practice some fo the stuff I was learning at the end of my time at Nelson Cash. In my quest for css best practices I came across &lt;a href=&quot;http://oocss.org/&quot;&gt;OOCSS&lt;/a&gt; and &lt;a href=&quot;http://smacss.com/&quot;&gt;SMACSS&lt;/a&gt;. Both help set a tone for what you should be trying to accomplish with CSS: reusable code. OOCSS feels more like theory to me, where as Smacss provides some applicatable ideas, such as a file structure:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;/css
-|- base.css
-|- layout.css
-|- module.css
-|- state.css
-|- theme.css
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+   <title>Proficiency With Terminal And Git</title>
+   <link href="http://www.ryanjm.com/git/2012/11/13/proficiency-with-terminal-and-git/"/>
+   <updated>2012-11-13T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/git/2012/11/13/proficiency-with-terminal-and-git</id>
+   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Terminal&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;Base&lt;/code&gt; is for how your elements should look by themselves, no additional classes. &lt;code&gt;Layout&lt;/code&gt; is for laying out larger elements on the page. &lt;code&gt;Module&lt;/code&gt; is for smaller elements that will be reused on multiple pages. &lt;code&gt;State&lt;/code&gt; is for handling the various states those modules can be in. &lt;code&gt;Theme&lt;/code&gt; is for modifying the look if you need a different style.&lt;/p&gt;
+&lt;p&gt;I&amp;#39;ve recently picked up an amazing Terminal shortcut: &lt;code&gt;^ + R&lt;/code&gt;. Gone are the days of hitting up arrow a bunch of times to get to a previous command. This little shortcut will let you search through your recent commands. Just start typing what you want and it &lt;em&gt;pop&lt;/em&gt; it shows up.&lt;/p&gt;
 
-&lt;p&gt;Using SASS&amp;#39;s partials I&amp;#39;ve included all of these files into one which has worked well. I haven&amp;#39;t found much of a need for state, OrangeQC page is pretty static, so I&amp;#39;ve taken it out. I&amp;#39;ve also added a mixins class so I can put my sass mixins in one spot. I&amp;#39;ve also been using &lt;a href=&quot;https://github.com/thoughtbot/bourbon&quot;&gt;Bourbon&lt;/a&gt; for some standard mixins which works out great.&lt;/p&gt;
+&lt;h2 id=&quot;toc_1&quot;&gt;Random Git commands&lt;/h2&gt;
 
-&lt;p&gt;As with everything it takes practice knowing how to layout modules and when/where/how to refactor. I really just need more practice with it. I was able to redo the layout of this site with Smaccs within a couple hours.&lt;/p&gt;
+&lt;p&gt;I recently watched Zach Holman&amp;#39;s &lt;a href=&quot;http://confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets&quot;&gt;Git and GitHub Secrets&lt;/a&gt; and it had a bunch of great nuggets. It helps to be able to go back through his &lt;a href=&quot;https://speakerdeck.com/holman/git-and-github-secrets&quot;&gt;slides&lt;/a&gt;. Here are some of my favorites.&lt;/p&gt;
 
-&lt;p&gt;There is some debate of if you should add additional classes to your html in order to style elements or if you should use sass to mixin your various styles for targetted elements. I&amp;#39;m still figuring out pros/cons, but for my projects I have full control over the html so I&amp;#39;d rather add a couple extra classes where needed and reduce the size of my css.&lt;/p&gt;
+&lt;h3 id=&quot;toc_2&quot;&gt;Github&lt;/h3&gt;
 
-&lt;p&gt;If you are getting tired of targeting every element on the page and doing custom styling for everything, check out SMACSS and OOCSS, they&amp;#39;ll speed up coding and make life easier. Things that would have taking me a day or two to do my old way is only taking me a couple hours now.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Add &lt;code&gt;?w=1&lt;/code&gt; to any url to ignore whitespace&lt;/p&gt;
+
+&lt;p&gt;Git.io is github&amp;#39;s url shortner. Check it out &lt;a href=&quot;git.io/nxVVig&quot;&gt;git.io/nxVVig&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Gists are repos&lt;/p&gt;
+
+&lt;p&gt;Using hub you can push to multiple remotes: &lt;code&gt;hub push origin,staging&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;?&lt;/code&gt; in github to see all shortcuts&lt;/p&gt;
+
+&lt;p&gt;Search commits by author: &lt;code&gt;?author=holman&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;I always forget this URL: &lt;a href=&quot;http://www.emoji-cheat-sheet.com&quot;&gt;Emoji&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;toc_3&quot;&gt;Git&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Commitless Commits: &lt;code&gt;git commit -m &amp;quot;...&amp;quot; --allow-empty&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Staging parts: &lt;code&gt;git add -p&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Search commits: &lt;code&gt;git show :/query&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Go back to previous selection: &lt;code&gt;cd -&lt;/code&gt;, &lt;code&gt;git checkout -&lt;/code&gt; &lt;/p&gt;
+
+&lt;p&gt;See which branches have been merged into current: &lt;code&gt;git branch --merged&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;See which branches have not been merged: &lt;code&gt;git branch --no-merged&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;See which branches contain a commit: &lt;code&gt;git branch --contains 838ad46&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Copy file without switching: &lt;code&gt;git checkout branch -- path/to/file.rb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git commit --amend -C HEAD&lt;/code&gt; - alias this!&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;git reset --soft HEAD^&lt;/code&gt; undoes the last commit and puts it on staging&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are a &lt;em&gt;bunch&lt;/em&gt; more, so watch the video.&lt;/p&gt;
 </content>
  </entry>
  
