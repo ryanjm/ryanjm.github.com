@@ -328,11 +328,16 @@ h1 {
 
 h2 {
   font-family: 'Tenor Sans', sans-serif;
-  font-size: 30px; }
+  font-size: 30px;
+  margin: 20px 0 6px; }
 
 h3 {
   font-family: 'Tenor Sans', sans-serif;
   font-size: 20px; }
+
+h4 {
+  font-size: 15px;
+  margin: 20px 0 -10px; }
 
 code {
   font-family: 'Cousine', sans-serif;
@@ -343,6 +348,17 @@ blockquote {
   border-left: 5px solid #ececec;
   margin: 1em 0;
   padding-left: 30px; }
+
+p {
+  margin: 15px 0 15px;
+  font-size: 15px; }
+
+@media only screen and (min-width: 321px) and (max-width: 959px) {
+  p, h4 {
+    font-size: 16px; } }
+@media only screen and (max-width: 320px) {
+  p, h4 {
+    font-size: 18px; } }
 
 html, body {
   height: 100%; }
@@ -361,9 +377,16 @@ html, body {
     display: table; }
   .container:after {
     clear: both; }
+  @media only screen and (min-width: 321px) and (max-width: 959px) {
+    .container {
+      padding: 10px; } }
 
 footer, #push {
   height: 150px; }
+  @media only screen and (min-width: 321px) and (max-width: 959px) {
+    footer, #push {
+      height: 205px;
+      padding: 10px; } }
 
 footer {
   position: relative;

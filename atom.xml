@@ -4,7 +4,7 @@
  <title>Tom Preston-Werner</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2012-11-13T09:21:13-07:00</updated>
+ <updated>2012-11-15T08:56:32-07:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
@@ -17,15 +17,15 @@
    <link href="http://www.ryanjm.com/git/2012/11/13/proficiency-with-terminal-and-git/"/>
    <updated>2012-11-13T00:00:00-07:00</updated>
    <id>http://www.ryanjm.com/git/2012/11/13/proficiency-with-terminal-and-git</id>
-   <content type="html">&lt;h2 id=&quot;toc_0&quot;&gt;Terminal&lt;/h2&gt;
+   <content type="html">&lt;h2 id=&quot;toc_3&quot;&gt;Terminal&lt;/h2&gt;
 
 &lt;p&gt;I&amp;#39;ve recently picked up an amazing Terminal shortcut: &lt;code&gt;^ + R&lt;/code&gt;. Gone are the days of hitting up arrow a bunch of times to get to a previous command. This little shortcut will let you search through your recent commands. Just start typing what you want and it &lt;em&gt;pop&lt;/em&gt; it shows up.&lt;/p&gt;
 
-&lt;h2 id=&quot;toc_1&quot;&gt;Random Git commands&lt;/h2&gt;
+&lt;h2 id=&quot;toc_4&quot;&gt;Random Git commands&lt;/h2&gt;
 
 &lt;p&gt;I recently watched Zach Holman&amp;#39;s &lt;a href=&quot;http://confreaks.com/videos/1229-aloharuby2012-git-and-github-secrets&quot;&gt;Git and GitHub Secrets&lt;/a&gt; and it had a bunch of great nuggets. It helps to be able to go back through his &lt;a href=&quot;https://speakerdeck.com/holman/git-and-github-secrets&quot;&gt;slides&lt;/a&gt;. Here are some of my favorites.&lt;/p&gt;
 
-&lt;h3 id=&quot;toc_2&quot;&gt;Github&lt;/h3&gt;
+&lt;h3 id=&quot;toc_5&quot;&gt;Github&lt;/h3&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Add &lt;code&gt;?w=1&lt;/code&gt; to any url to ignore whitespace&lt;/p&gt;
@@ -43,7 +43,7 @@
 &lt;p&gt;I always forget this URL: &lt;a href=&quot;http://www.emoji-cheat-sheet.com&quot;&gt;Emoji&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&quot;toc_3&quot;&gt;Git&lt;/h2&gt;
+&lt;h2 id=&quot;toc_6&quot;&gt;Git&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;Commitless Commits: &lt;code&gt;git commit -m &amp;quot;...&amp;quot; --allow-empty&lt;/code&gt;&lt;/p&gt;
@@ -78,15 +78,15 @@
    <id>http://www.ryanjm.com/2012/06/06/Article-Roundup</id>
    <content type="html">&lt;p&gt;Here are some of the great articles I&amp;#39;ve come across this week.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.kalzumeus.com/2012/05/31/can-i-get-your-email/&quot;&gt;You Should Probably Send More Email Than You Do&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;toc_0&quot;&gt;&lt;a href=&quot;http://www.kalzumeus.com/2012/05/31/can-i-get-your-email/&quot;&gt;You Should Probably Send More Email Than You Do&lt;/a&gt;&lt;/h4&gt;
 
 &lt;p&gt;Patrick McKenzie gets into why it can be valuable to get into a user&amp;#39;s inbox. It is a long article, but has enough nuggets of wisdom to warrant the time.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.extendslogic.com/business/what-i-learned-from-increasing-my-prices/&quot;&gt;What I Learned From Increasing My Prices&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;toc_1&quot;&gt;&lt;a href=&quot;http://www.extendslogic.com/business/what-i-learned-from-increasing-my-prices/&quot;&gt;What I Learned From Increasing My Prices&lt;/a&gt;&lt;/h4&gt;
 
 &lt;p&gt;Ruben Gamez talks about using client surveys and phone calls to figure out how to split pricing tiers and how to charge for each.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;http://www.webdesignerdepot.com/2012/06/ui-vs-ux-whats-the-difference/?utm_source=loopinsight.com&amp;amp;utm_medium=referral&amp;amp;utm_campaign=Feed%3A+loopinsight%2FKqJb+%28The+Loop%29&quot;&gt;UI vs UX: what&amp;#39;s the difference?&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&quot;toc_2&quot;&gt;&lt;a href=&quot;http://www.webdesignerdepot.com/2012/06/ui-vs-ux-whats-the-difference/?utm_source=loopinsight.com&amp;amp;utm_medium=referral&amp;amp;utm_campaign=Feed%3A+loopinsight%2FKqJb+%28The+Loop%29&quot;&gt;UI vs UX: what&amp;#39;s the difference?&lt;/a&gt;&lt;/h4&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;UI is the saddle, the stirrups, and the reigns.&lt;br&gt;
