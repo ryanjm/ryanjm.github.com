@@ -12,3 +12,6 @@ This past week I've been working on getting organized and that includes going th
 [12 Ted talks for Entrepreneurs](http://www.shopify.com/blog/6553665-12-must-watch-ted-talks-for-entrepreneurs) - Some food for thought.
 
 [SO's definitive guide to forms based website authentication](http://stackoverflow.com/questions/549/the-definitive-guide-to-forms-based-website-authentication).
+
+
+[14 days with jQuery](http://jquery14.com/day-01) - old (2010), but contains some great videos about jQuery / javascript.

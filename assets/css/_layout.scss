@@ -3,6 +3,7 @@
 
 html, body { height: 100%;}
 
+
 .container {  
   min-height: 100%;
   height: auto !important;
@@ -10,10 +11,20 @@ html, body { height: 100%;}
   margin: 0 auto -1 * $footer_height;
 
   @include outer-container;
+
+  @include respond-to(tablet) {
+    padding: 10px;
+  }
 }
 
 footer, #push {
 	height: $footer_height;
+
+  @include respond-to(tablet) {
+    height: $footer_height + 55px;
+    padding: 10px;
+  }
+
 } 
 
 footer {

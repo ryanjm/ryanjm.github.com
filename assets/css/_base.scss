@@ -23,11 +23,17 @@ h1 {
 h2 {
   @include heading-font;
   font-size: 30px;
+  margin: 20px 0 6px;
 }
 
 h3 {
   @include heading-font;
   font-size: 20px;
+}
+
+h4 {
+  font-size: 15px;
+  margin: 20px 0 -10px;
 }
 
 code {
@@ -40,4 +46,18 @@ blockquote {
   border-left: 5px solid $light-outline;
   margin: 1em 0;
   padding-left: 30px;
+}
+
+p {
+  margin: 15px 0 15px;
+  font-size: 15px;
+}
+
+p, h4 {
+  @include respond-to(tablet) {
+    font-size: 16px;
+  }
+  @include respond-to(phone) {
+    font-size: 18px;
+  }
 }
