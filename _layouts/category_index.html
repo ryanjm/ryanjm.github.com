@@ -2,11 +2,10 @@
 layout: page
 ---
 
-
 <div class="pages-list">
-  <ol>
-    {% assign pages_list =site.categories[page.category] %}
+  <ul>
+    {% assign pages_list = site.categories[page.category] %}
     {% include pages_list.html %}
-  </ol>
+  </ul>
 </div>
 

@@ -1,5 +1,6 @@
 ---
 layout: post
+category: weekly-roundup
 tags: [update]
 ---
 
