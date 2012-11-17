@@ -4,13 +4,40 @@
  <title>Tom Preston-Werner</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2012-11-15T08:56:32-07:00</updated>
+ <updated>2012-11-17T16:02:04-07:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
    <email>ryan@ryanjm.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Slowly Clearing Out Instapaper</title>
+   <link href="http://www.ryanjm.com/weekly-roundup/2012/11/17/slowly-clearing-out-instapaper/"/>
+   <updated>2012-11-17T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/weekly-roundup/2012/11/17/slowly-clearing-out-instapaper</id>
+   <content type="html">&lt;p&gt;After realizing I had 400 unread articles in Instapaper (dating all the way back to 2009), I&amp;#39;ve declared bankruptcy by moving them into their own folder. I&amp;#39;ll go through them slowly over the next year, and every week or two I&amp;#39;ll post some of the best articles that I&amp;#39;ve come across. Here is this week&amp;#39;s list.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.minming.net/post/35553963889/a-billion-dollar-software-tech-company-is-founded-every&quot;&gt;A billion dollar software tech company is founded every 3 months *in U.S.&lt;/a&gt; - interesting list of some of the billion dollar companies that have come out in the past couple years.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.shopify.com/blog/6553665-12-must-watch-ted-talks-for-entrepreneurs&quot;&gt;12 Ted talks for Entrepreneurs&lt;/a&gt; - Some food for thought.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/549/the-definitive-guide-to-forms-based-website-authentication&quot;&gt;SO&amp;#39;s definitive guide to forms based website authentication&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jquery14.com/day-01&quot;&gt;14 days with jQuery&lt;/a&gt; - old (2010), but contains some great videos about jQuery / javascript.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://css-tricks.com/why-ems/&quot;&gt;Why Ems?&lt;/a&gt; - I&amp;#39;ve been wanting to play around with Ems for awhile and I think these are some pretty valid points.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jtaby.com/2012/04/23/modern-web-development-part-1.html&quot;&gt;Modern Web Development&lt;/a&gt; - Length article in which Majd goes through almost every aspect of Chrome&amp;#39;s WebKit Inspector. I definitely learned a couple new things.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://httpkit.com/resources/HTTP-from-the-Command-Line/&quot;&gt;9 users for cURL worth knowing&lt;/a&gt; - They go through the common use cases of using cURL. Good read and I&amp;#39;ll be using this as a resource in the future.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.ted.com/talks/shawn_achor_the_happy_secret_to_better_work.html&quot;&gt;TED: Shawn Achor: The happy secret to better work&lt;/a&gt; - I&amp;#39;ve watched this a couple times since it came out. Good things to keep in mind.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://techcrunch.com/2012/11/14/foundation-video-ben-horowitz-of-andreessen-horowitz-at-the-google-ventures-founder-ceo-summit/&quot;&gt;Foundation: Ben Horowitz&lt;/a&gt; - I enjoy Kevin&amp;#39;s interviews and this is a good one with Ben Horowitz.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Proficiency With Terminal And Git</title>
@@ -73,9 +100,9 @@
  
  <entry>
    <title>Article Roundup</title>
-   <link href="http://www.ryanjm.com/2012/06/06/Article-Roundup/"/>
+   <link href="http://www.ryanjm.com/weekly-roundup/2012/06/06/Article-Roundup/"/>
    <updated>2012-06-06T00:00:00-06:00</updated>
-   <id>http://www.ryanjm.com/2012/06/06/Article-Roundup</id>
+   <id>http://www.ryanjm.com/weekly-roundup/2012/06/06/Article-Roundup</id>
    <content type="html">&lt;p&gt;Here are some of the great articles I&amp;#39;ve come across this week.&lt;/p&gt;
 
 &lt;h4 id=&quot;toc_0&quot;&gt;&lt;a href=&quot;http://www.kalzumeus.com/2012/05/31/can-i-get-your-email/&quot;&gt;You Should Probably Send More Email Than You Do&lt;/a&gt;&lt;/h4&gt;
