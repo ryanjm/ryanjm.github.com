@@ -4,13 +4,57 @@
  <title>Tom Preston-Werner</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2012-11-17T16:02:04-07:00</updated>
+ <updated>2012-11-20T13:09:32-07:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
    <email>ryan@ryanjm.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Vim Registers</title>
+   <link href="http://www.ryanjm.com/vim/2012/11/20/vim-registers/"/>
+   <updated>2012-11-20T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/vim/2012/11/20/vim-registers</id>
+   <content type="html">&lt;p&gt;One of the big time savers I loved in TextMate was the ability to copy and paste multiple things at a time. In TextMate, if you will &amp;#8984;+C multiple items of text, you can paste them out doing &amp;#8984;+V, &amp;#8984;+&amp;#x21E7;+V, and then repeating &amp;#8984;+&amp;#x21E7;+V till you are done.&lt;/p&gt;
+
+&lt;p&gt;In Vim, it isn&amp;#39;t that easy. Vim has registeres which are places you can place text to use later. To see your current list of registers use &lt;code&gt;:reg&lt;/code&gt;. &lt;/p&gt;
+
+&lt;p&gt;The docs say there are 9 types of registers:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;1. The unnamed register &amp;quot;&amp;quot;
+2. 10 numbered registers &amp;quot;0 to &amp;quot;9
+3. The small delete register &amp;quot;-
+4. 26 named registers &amp;quot;a to &amp;quot;z or &amp;quot;A to &amp;quot;Z
+5. four read-only registers &amp;quot;:, &amp;quot;., &amp;quot;% and &amp;quot;#
+6. the expression register &amp;quot;=
+7. The selection and drop registers &amp;quot;*, &amp;quot;+ and &amp;quot;~ 
+8. The black hole register &amp;quot;_
+9. Last search pattern register &amp;quot;/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If you want to delete a line and not lose the last thing you copied / deleted, you have to delete it into the black hole register &lt;code&gt;&amp;quot;_dd&lt;/code&gt;. One convient thing is that for every delete or change, vim automatically puts those into the 1-9 register, shifting them up one register each time.&lt;/p&gt;
+
+&lt;p&gt;For example, if you had the following lines:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;Line 1
+Line 2
+Line 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;And you go down each line and delete it with &lt;code&gt;dd&lt;/code&gt;, then you could paste them all out with the following commands:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;&amp;quot;1p
+.
+.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That is, you paste from the first register, and then you repeat with &lt;code&gt;.&lt;/code&gt;, which normally repeats the last command, in thise can it will automatically walk up the other registers for you. Unfortinetly, yank doesn&amp;#39;t work this way.&lt;/p&gt;
+
+&lt;p&gt;For yank you can put the text into a register by doing &lt;code&gt;&amp;quot;xy&lt;/code&gt; where &lt;code&gt;x&lt;/code&gt; is the register you want to use. This is the only way to yank multiple lines or sections of code and be able to reuse them later.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Slowly Clearing Out Instapaper</title>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  
+	<title>Vim Registers | RyanJM</title>
+  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans|Cousine|Crimson+Text' rel='stylesheet' type='text/css'>
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/autumn.css" rel="stylesheet" type="text/css" media="all">
+	
+	<link href='http://www.myopenid.com/server' rel='openid.server' />
+  <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
+</head>
+<body>
+  <div class="container">
+    <div class="post">
+  
+  <h1>Vim Registers</h1>
+
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>One of the big time savers I loved in TextMate was the ability to copy and paste multiple things at a time. In TextMate, if you will &#8984;+C multiple items of text, you can paste them out doing &#8984;+V, &#8984;+&#x21E7;+V, and then repeating &#8984;+&#x21E7;+V till you are done.</p>
+
+<p>In Vim, it isn&#39;t that easy. Vim has registeres which are places you can place text to use later. To see your current list of registers use <code>:reg</code>. </p>
+
+<p>The docs say there are 9 types of registers:</p>
+<div class="highlight"><pre><code class="text codehilite">1. The unnamed register &quot;&quot;
+2. 10 numbered registers &quot;0 to &quot;9
+3. The small delete register &quot;-
+4. 26 named registers &quot;a to &quot;z or &quot;A to &quot;Z
+5. four read-only registers &quot;:, &quot;., &quot;% and &quot;#
+6. the expression register &quot;=
+7. The selection and drop registers &quot;*, &quot;+ and &quot;~ 
+8. The black hole register &quot;_
+9. Last search pattern register &quot;/
+</code></pre>
+</div>
+
+<p>If you want to delete a line and not lose the last thing you copied / deleted, you have to delete it into the black hole register <code>&quot;_dd</code>. One convient thing is that for every delete or change, vim automatically puts those into the 1-9 register, shifting them up one register each time.</p>
+
+<p>For example, if you had the following lines:</p>
+<div class="highlight"><pre><code class="text codehilite">Line 1
+Line 2
+Line 3
+</code></pre>
+</div>
+
+<p>And you go down each line and delete it with <code>dd</code>, then you could paste them all out with the following commands:</p>
+<div class="highlight"><pre><code class="text codehilite">&quot;1p
+.
+.
+</code></pre>
+</div>
+
+<p>That is, you paste from the first register, and then you repeat with <code>.</code>, which normally repeats the last command, in thise can it will automatically walk up the other registers for you. Unfortinetly, yank doesn&#39;t work this way.</p>
+
+<p>For yank you can put the text into a register by doing <code>&quot;xy</code> where <code>x</code> is the register you want to use. This is the only way to yank multiple lines or sections of code and be able to reuse them later.</p>
+
+  </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+    <span class="post-category">See more acticles about <a href="/topics/vim">vim</a></span>
+    
+
+    
+    <span class="tags">Tagged: 
+      
+        <a href="/tags/vim">vim</a>
+      
+    </span>
+    
+
+    <span class="post-date">Written: 20 November 2012</span>
+
+    
+    <span class="previous"><a href="/weekly-roundup/2012/11/17/slowly-clearing-out-instapaper/">Slowly Clearing Out Instapaper</a></span>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+    <div id="push"> </div>
+  </div>
+  <footer>
+    <div>
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
+        founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>.</p>
+      <p>
+        <a href="http://github.com/ryanjm">Github</a> 
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+
+<script src="/assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28520278-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
