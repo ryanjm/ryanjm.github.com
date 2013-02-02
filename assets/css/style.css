@@ -71,7 +71,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #cccccc;
   margin: 1em 0;
   padding: 0; }
 
@@ -88,7 +88,7 @@ mark {
 
 pre, code, kbd, samp {
   font-family: monospace, monospace;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em; }
 
 pre {
@@ -281,7 +281,7 @@ td {
     content: ""; }
 
   pre, blockquote {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     page-break-inside: avoid; }
 
   thead {
@@ -309,7 +309,7 @@ td {
 
 body {
   color: #2a2a2a;
-  font-family: 'Crimson Text', serif;
+  font-family: "Crimson Text", serif;
   font-size: 16px; }
 
 a {
@@ -320,28 +320,31 @@ a {
     color: #757575; }
 
 h1 {
-  font-family: 'Tenor Sans', sans-serif;
+  font-family: "Tenor Sans", sans-serif;
   font-size: 35px;
   margin: 20px 0 10px; }
   h1 a {
     text-decoration: none; }
 
 h2 {
-  font-family: 'Tenor Sans', sans-serif;
+  font-family: "Tenor Sans", sans-serif;
   font-size: 30px;
   margin: 20px 0 6px; }
 
 h3 {
-  font-family: 'Tenor Sans', sans-serif;
+  font-family: "Tenor Sans", sans-serif;
   font-size: 20px; }
 
 h4 {
   font-size: 15px;
   margin: 20px 0 -10px; }
 
+pre {
+  margin: 5px 2px; }
+
 code {
-  font-family: 'Cousine', sans-serif;
-  font-size: 14px; }
+  font-family: "Cousine", sans-serif;
+  font-size: 12px; }
 
 blockquote {
   color: #2c2c2c;
@@ -351,7 +354,7 @@ blockquote {
 
 p {
   margin: 15px 0 15px;
-  font-size: 15px; }
+  font-size: 16px; }
 
 @media only screen and (min-width: 321px) and (max-width: 959px) {
   p, h4 {
@@ -520,7 +523,7 @@ footer {
 .highlight {
   background: #f5f5f5;
   padding: 2px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   -webkit-border-radius: 3px;
   border-radius: 3px;
   margin: 10px 0;
@@ -528,7 +531,7 @@ footer {
 
 p code {
   background: #f5f5f5;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   font-size: 12px;

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  
+	<title>Getting Started with Ember.js | RyanJM</title>
+  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans|Cousine|Crimson+Text' rel='stylesheet' type='text/css'>
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/autumn.css" rel="stylesheet" type="text/css" media="all">
+	
+	<link href='http://www.myopenid.com/server' rel='openid.server' />
+  <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
+</head>
+<body>
+  <div class="container">
+    <div class="post">
+  
+  <h1>Getting Started with Ember.js</h1>
+
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>I&#39;ve been looking at Ember on and off for the past couple months and took a serious dive into it this past week. I stumbled through a few fo the basics so my goal with these next few posts is to help others get up to speed and solidify my own understanding.</p>
+
+<h2 id="toc_7">New App</h2>
+
+<p>There are a couple dependencies for Ember. You&#39;ll need <code>jQuery</code> <em>and</em> <code>handlebars.js</code>. For this example we&#39;ll just reference these online:</p>
+<div class="highlight"><pre><code class="html codehilite"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;http://code.jquery.com/jquery.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://github.com/downloads/wycats/handlebars.js/handlebars-1.0.rc.1.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;https://raw.github.com/emberjs/ember.js/release-builds/ember-1.0.0-pre.4.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>Now that they are included we can create our application. When working with Ember you can either write out <code>Ember</code> or use <code>Em</code> for a shorthand. Your application is going to act as a namespace for everything in your Ember application. We&#39;ll create it by doing:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span> <span class="o">=</span> <span class="nx">Em</span><span class="p">.</span><span class="nx">Application</span><span class="p">.</span><span class="nx">create</span><span class="p">({});</span>
+</code></pre>
+</div>
+
+<p>Ember will automatically add an <code>ApplicationView</code> and <code>ApplicationController</code>. And by default it will look for a template without a name or with the name &quot;application&quot;. So let&#39;s define that now:</p>
+<div class="highlight"><pre><code class="html codehilite"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-handlebars&quot;</span><span class="nt">&gt;</span>
+  <span class="nx">This</span> <span class="nx">is</span> <span class="nx">the</span> <span class="nx">application</span> <span class="nx">template</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>This is all that we need to get our application to run. You can check this out on <a href="http://jsbin.com/idijen/1/edit">jsbin</a>.</p>
+
+<h2 id="toc_8">Template</h2>
+
+<p>Obviously some of the power of Ember comes through its ability to manage templates. You can render a template two ways. Either with the handlebar&#39;s <code>{{ outlet }}</code> control (which is similar to Ruby&#39;s <code>yield</code>) or with the <code>{{ view }}</code> command. We&#39;ll look at the outlet next time with Routes. This time let&#39;s create our first view:</p>
+<div class="highlight"><pre><code class="html codehilite"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-handlebars&quot;</span> <span class="na">data-template-name=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>
+  <span class="nx">Hello</span> <span class="nx">World</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>Now we need to tell Ember about this view:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">HelloView</span> <span class="o">=</span> <span class="nx">Em</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">templateName</span><span class="o">:</span> <span class="s2">&quot;hello&quot;</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>We could also have added this as part of the inital setup of our App:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span> <span class="o">=</span> <span class="nx">Em</span><span class="p">.</span><span class="nx">Application</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+  <span class="nx">HelloView</span><span class="o">:</span> <span class="nx">Em</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="nx">templateName</span><span class="o">:</span> <span class="s2">&quot;hello&quot;</span>
+  <span class="p">})</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>The last thing we need to do is use the <code>view</code> method in order to add this to our application layout:</p>
+<div class="highlight"><pre><code class="html codehilite"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-handlebars&quot;</span><span class="nt">&gt;</span>
+  <span class="nx">This</span> <span class="nx">is</span> <span class="nx">the</span> <span class="nx">application</span> <span class="nx">template</span><span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+  <span class="p">{{</span><span class="nx">view</span> <span class="nx">App</span><span class="p">.</span><span class="nx">HelloView</span><span class="p">}}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>And that&#39;s it. You can check out the <a href="http://jsbin.com/idijen/3/edit">jsbin</a>.</p>
+
+<h2 id="toc_9">Views</h2>
+
+<p>One last thing with views. You can define attributes about the view and even define properties on the view. For example if we updated our view:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">HelloView</span> <span class="o">=</span> <span class="nx">Em</span><span class="p">.</span><span class="nx">View</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">templateName</span><span class="o">:</span> <span class="s2">&quot;hello&quot;</span><span class="p">,</span>
+  <span class="nx">message</span><span class="o">:</span> <span class="s2">&quot;Hello World&quot;</span><span class="p">,</span>
+  <span class="nx">classNames</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;bold&quot;</span><span class="p">]</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>We can use this <code>message</code> variable in order to display something within our view:</p>
+<div class="highlight"><pre><code class="html codehilite"><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/x-handlebars&quot;</span> <span class="na">data-template-name=</span><span class="s">&quot;hello&quot;</span><span class="nt">&gt;</span>
+  <span class="p">{{</span><span class="nx">view</span><span class="p">.</span><span class="nx">message</span><span class="p">}}</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<p>Additionally, the div that the Ember view uses, will have the class <code>bold</code>. If we need to change what kind of element the View is rendered with we do that with <code>tagName</code>. Here is the <a href="http://jsbin.com/idijen/4/edit">jsbin</a>.</p>
+
+<p>In the next post I&#39;ll go through the router, controllers, and more about the templates.</p>
+
+  </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+
+    
+    <span class="tags">Tagged: 
+      
+    </span>
+    
+
+    <span class="post-date">Written: 02 February 2013</span>
+
+    
+    <span class="previous"><a href="/vim/2012/11/20/vim-registers/">Vim Registers</a></span>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+    <div id="push"> </div>
+  </div>
+  <footer>
+    <div>
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
+        founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>.</p>
+      <p>
+        <a href="http://github.com/ryanjm">Github</a> 
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+
+<script src="/assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28520278-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>
