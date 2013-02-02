@@ -22,7 +22,7 @@ class Redcarpet2Markdown < Redcarpet::Render::HTML
   end
 
   def cache(path)
-    if File.exist?(path)
+    if false && File.exist?(path)
       File.read(path)
     else
       content = yield

@@ -36,9 +36,13 @@ h4 {
   margin: 20px 0 -10px;
 }
 
+pre {
+  margin: 5px 2px;
+}
+
 code {
   @include code-font;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 blockquote {
@@ -50,7 +54,7 @@ blockquote {
 
 p {
   margin: 15px 0 15px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 p, h4 {
