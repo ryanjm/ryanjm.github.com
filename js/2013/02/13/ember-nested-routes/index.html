@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  
+	<title>Ember.js Nested Routes | RyanJM</title>
+  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans|Cousine|Crimson+Text' rel='stylesheet' type='text/css'>
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/autumn.css" rel="stylesheet" type="text/css" media="all">
+	
+	<link href='http://www.myopenid.com/server' rel='openid.server' />
+  <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
+</head>
+<body>
+  <div class="container">
+    <div class="post">
+  
+  <h1>Ember.js Nested Routes</h1>
+
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>I had a hard time with nested routes the first time, so I hope to clear it up for others. Let&#39;s start with the following router:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">resource</span><span class="p">(</span><span class="s1">&#39;posts&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">route</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>In order to get to the root path we need to go to <code>#/posts</code>. The Router gives us some named routes which we can use with the Handlebars <code>linkTo</code> method or Ember&#39;s <code>transitionTo</code> method. Ember has done a great job of removing boiler plate code for us. It automatically creates <code>PostsView</code> and <code>PostsController</code> which will look for a <code>posts</code> template. Let&#39;s link to it from the application template:</p>
+<div class="highlight"><pre><code class="html codehilite">{{#linkTo &#39;posts&#39;}}Posts{{/linkTo}}
+</code></pre>
+</div>
+
+<p>What tripped me up is that when you define a resource, Ember will automatically use two templates (if given). The first you can think of as the &quot;root&quot; view. In this case it would be named <code>posts</code>. Additionally, following CRUD, it will also use an &quot;index&quot; view: <code>posts/index</code>. If you aren&#39;t going to have subviews then you could just use one template called <code>posts</code>, but if you want multiple subviews (show and edit for example) then you&#39;ll want to put an <code>{{outlet}}</code> inside the <code>posts</code> template in order for the subviews to be rendered there (or leave the <code>posts</code> template out all together). By going to <code>posts</code> (as in the <code>linkTo</code> above) it will, by default, attempt to render the <code>index</code> view. </p>
+
+<p>If instead we want to go to the hello route, we could link to it with:</p>
+<div class="highlight"><pre><code class="html codehilite">{{#linkTo &#39;posts.hello&#39;}}Go to hello{{/linkTo}}
+</code></pre>
+</div>
+
+<p>This idea of nested views also applies to nested resources, except that the name of the route will not be nested. If you want to see what routes you have (and their names) then in the JS console of your app type:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">Router</span><span class="p">.</span><span class="nx">router</span><span class="p">.</span><span class="nx">recognizer</span><span class="p">.</span><span class="nx">names</span>
+</code></pre>
+</div>
+
+<p>Additionally if we want to have the default route (<code>/</code>) go to our posts we can do that with:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">IndexRoute</span> <span class="o">=</span> <span class="nx">Em</span><span class="p">.</span><span class="nx">Route</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">redirect</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">transitionTo</span><span class="p">(</span><span class="s1">&#39;posts&#39;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Check out this <a href="http://jsbin.com/idebox/3/edit">JS bin</a> to play around with this example code.</p>
+
+  </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+    <span class="post-category">See more acticles about <a href="/topics/js">js</a></span>
+    
+
+    
+    <span class="tags">Tagged: 
+      
+        <a href="/tags/js,">js,</a>,
+      
+        <a href="/tags/ember">ember</a>
+      
+    </span>
+    
+
+    <span class="post-date">Written: 13 February 2013</span>
+
+    
+    <span class="previous"><a href="/js/2013/02/02/getting-started-with-emberjs/">Getting Started with Ember.js</a></span>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+    <div id="push"> </div>
+  </div>
+  <footer>
+    <div>
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
+        founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>.</p>
+      <p>
+        <a href="http://github.com/ryanjm">Github</a> 
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+
+<script src="/assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28520278-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

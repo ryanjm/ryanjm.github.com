@@ -4,7 +4,7 @@
  <title>Ryan Mathews</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2013-02-05T18:02:36-07:00</updated>
+ <updated>2013-02-13T19:48:07-07:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
@@ -13,10 +13,54 @@
 
  
  <entry>
+   <title>Ember.js Nested Routes</title>
+   <link href="http://www.ryanjm.com/js/2013/02/13/ember-nested-routes/"/>
+   <updated>2013-02-13T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/js/2013/02/13/ember-nested-routes</id>
+   <content type="html">&lt;p&gt;I had a hard time with nested routes the first time, so I hope to clear it up for others. Let&amp;#39;s start with the following router:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js codehilite&quot;&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;resource&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;posts&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;hello&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;In order to get to the root path we need to go to &lt;code&gt;#/posts&lt;/code&gt;. The Router gives us some named routes which we can use with the Handlebars &lt;code&gt;linkTo&lt;/code&gt; method or Ember&amp;#39;s &lt;code&gt;transitionTo&lt;/code&gt; method. Ember has done a great job of removing boiler plate code for us. It automatically creates &lt;code&gt;PostsView&lt;/code&gt; and &lt;code&gt;PostsController&lt;/code&gt; which will look for a &lt;code&gt;posts&lt;/code&gt; template. Let&amp;#39;s link to it from the application template:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html codehilite&quot;&gt;{{#linkTo &amp;#39;posts&amp;#39;}}Posts{{/linkTo}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;What tripped me up is that when you define a resource, Ember will automatically use two templates (if given). The first you can think of as the &amp;quot;root&amp;quot; view. In this case it would be named &lt;code&gt;posts&lt;/code&gt;. Additionally, following CRUD, it will also use an &amp;quot;index&amp;quot; view: &lt;code&gt;posts/index&lt;/code&gt;. If you aren&amp;#39;t going to have subviews then you could just use one template called &lt;code&gt;posts&lt;/code&gt;, but if you want multiple subviews (show and edit for example) then you&amp;#39;ll want to put an &lt;code&gt;{{outlet}}&lt;/code&gt; inside the &lt;code&gt;posts&lt;/code&gt; template in order for the subviews to be rendered there (or leave the &lt;code&gt;posts&lt;/code&gt; template out all together). By going to &lt;code&gt;posts&lt;/code&gt; (as in the &lt;code&gt;linkTo&lt;/code&gt; above) it will, by default, attempt to render the &lt;code&gt;index&lt;/code&gt; view. &lt;/p&gt;
+
+&lt;p&gt;If instead we want to go to the hello route, we could link to it with:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html codehilite&quot;&gt;{{#linkTo &amp;#39;posts.hello&amp;#39;}}Go to hello{{/linkTo}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;This idea of nested views also applies to nested resources, except that the name of the route will not be nested. If you want to see what routes you have (and their names) then in the JS console of your app type:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js codehilite&quot;&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;recognizer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;names&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Additionally if we want to have the default route (&lt;code&gt;/&lt;/code&gt;) go to our posts we can do that with:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js codehilite&quot;&gt;&lt;span class=&quot;nx&quot;&gt;App&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;IndexRoute&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Route&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;extend&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;redirect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;transitionTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;posts&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Check out this &lt;a href=&quot;http://jsbin.com/idebox/3/edit&quot;&gt;JS bin&lt;/a&gt; to play around with this example code.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Getting Started with Ember.js</title>
-   <link href="http://www.ryanjm.com/2013/02/02/getting-started-with-emberjs/"/>
+   <link href="http://www.ryanjm.com/js/2013/02/02/getting-started-with-emberjs/"/>
    <updated>2013-02-02T00:00:00-07:00</updated>
-   <id>http://www.ryanjm.com/2013/02/02/getting-started-with-emberjs</id>
+   <id>http://www.ryanjm.com/js/2013/02/02/getting-started-with-emberjs</id>
    <content type="html">&lt;p&gt;I&amp;#39;ve been looking at Ember on and off for the past couple months and took a serious dive into it this past week. I stumbled through a few fo the basics so my goal with these next few posts is to help others get up to speed and solidify my own understanding.&lt;/p&gt;
 
 &lt;h2 id=&quot;toc_7&quot;&gt;New App&lt;/h2&gt;
