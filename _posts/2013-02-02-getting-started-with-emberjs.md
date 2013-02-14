@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Getting Started with Ember.js
+category: js
+tags: js, ember
 ---
 {% raw %}
 I've been looking at Ember on and off for the past couple months and took a serious dive into it this past week. I stumbled through a few fo the basics so my goal with these next few posts is to help others get up to speed and solidify my own understanding.
