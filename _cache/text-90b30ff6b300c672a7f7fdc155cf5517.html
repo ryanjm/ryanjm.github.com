@@ -1,0 +1,11 @@
+<div class="highlight"><pre><code class="text codehilite">App.HoverView = Em.View.extend({
+  tagName: &#39;span&#39;,
+  mouseEnter: function(){
+    this.get(&#39;delegate&#39;).send(this.get(&#39;action&#39;));
+  },
+  mouseLeave: function(){
+    this.get(&#39;delegate&#39;).send(this.get(&#39;action&#39;));
+  }
+});
+</code></pre>
+</div>

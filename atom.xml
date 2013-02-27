@@ -4,13 +4,44 @@
  <title>Ryan Mathews</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2013-02-13T19:48:07-07:00</updated>
+ <updated>2013-02-26T18:09:52-07:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
    <email>ryan@ryanjm.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Ember.js and View Delegation</title>
+   <link href="http://www.ryanjm.com/js/2013/02/26/emberjs-and-view-delegation/"/>
+   <updated>2013-02-26T00:00:00-07:00</updated>
+   <id>http://www.ryanjm.com/js/2013/02/26/emberjs-and-view-delegation</id>
+   <content type="html">&lt;p&gt;Ember makes it easy to add an action to a button or an anchor tag with the &lt;code&gt;{{action}}&lt;/code&gt; helper, but sometimes you need more control. Delegation works out really well. You create a view, specify the delegate, and the function(s) you want called. The nice thing is you can add as many actions as you want the view to have and you can reuse it for different controllers.&lt;/p&gt;
+
+&lt;p&gt;In your view you can add:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;{{#view App.HoverView delegateBinding=&amp;#39;this&amp;#39; action=&amp;#39;showBoldAction&amp;#39;}}
+  ...
+{{/view}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Then just define the view:&lt;/p&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text codehilite&quot;&gt;App.HoverView = Em.View.extend({
+  tagName: &amp;#39;span&amp;#39;,
+  mouseEnter: function(){
+    this.get(&amp;#39;delegate&amp;#39;).send(this.get(&amp;#39;action&amp;#39;));
+  },
+  mouseLeave: function(){
+    this.get(&amp;#39;delegate&amp;#39;).send(this.get(&amp;#39;action&amp;#39;));
+  }
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;I&amp;#39;ve used this to give better control around TextFields and hovering actions such as the one above. Check out a &lt;a href=&quot;http://jsbin.com/ihiyis/1/edit&quot;&gt;jsbin&lt;/a&gt; of this in action.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Ember.js Nested Routes</title>

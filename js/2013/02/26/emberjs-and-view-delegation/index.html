@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
   
-	<title>Tags | RyanJM</title>
+	<title>Ember.js and View Delegation | RyanJM</title>
   
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -17,75 +17,71 @@
 </head>
 <body>
   <div class="container">
-    <header>
-  <h1><a href="/">RyanJM</a></h1>
-  <nav>
-    <ul>
-      
-      <li><a href="/">Home</a></li>
-      
-
-      
-      <li><a href="/topics/">Topics</a></li>
-      
-
-      
-      <li><a href="/tags/" class="current">Tags</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-<div class="page">
-  <h2>Posts By Tag</h2>
-
-  <div class="content">
-    <ul class="tag-cloud">
-    
-  <li><a href="update">update (4)</a></li>
-    
-  <li><a href="random">random (1)</a></li>
-    
-  <li><a href="programming">programming (4)</a></li>
-    
-  <li><a href="css">css (1)</a></li>
-    
-  <li><a href="js">js (2)</a></li>
-    
-  <li><a href="jQuery">jQuery (1)</a></li>
-    
-  <li><a href="ruby">ruby (1)</a></li>
-    
-  <li><a href="rails">rails (1)</a></li>
-    
-  <li><a href="git">git (1)</a></li>
-    
-  <li><a href="terminal">terminal (1)</a></li>
-    
-  <li><a href="github">github (1)</a></li>
-    
-  <li><a href="entrepreneur,">entrepreneur, (1)</a></li>
-    
-  <li><a href="authentication,">authentication, (1)</a></li>
-    
-  <li><a href="jquery,">jquery, (1)</a></li>
-    
-  <li><a href="css,">css, (1)</a></li>
-    
-  <li><a href="ted">ted (1)</a></li>
-    
-  <li><a href="vim">vim (1)</a></li>
-    
-  <li><a href="js,">js, (3)</a></li>
-    
-  <li><a href="ember">ember (3)</a></li>
+    <div class="post">
   
-</ul>
+  <h1>Ember.js and View Delegation</h1>
 
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>Ember makes it easy to add an action to a button or an anchor tag with the <code>{{action}}</code> helper, but sometimes you need more control. Delegation works out really well. You create a view, specify the delegate, and the function(s) you want called. The nice thing is you can add as many actions as you want the view to have and you can reuse it for different controllers.</p>
 
+<p>In your view you can add:</p>
+<div class="highlight"><pre><code class="text codehilite">{{#view App.HoverView delegateBinding=&#39;this&#39; action=&#39;showBoldAction&#39;}}
+  ...
+{{/view}}
+</code></pre>
+</div>
+
+<p>Then just define the view:</p>
+<div class="highlight"><pre><code class="text codehilite">App.HoverView = Em.View.extend({
+  tagName: &#39;span&#39;,
+  mouseEnter: function(){
+    this.get(&#39;delegate&#39;).send(this.get(&#39;action&#39;));
+  },
+  mouseLeave: function(){
+    this.get(&#39;delegate&#39;).send(this.get(&#39;action&#39;));
+  }
+});
+</code></pre>
+</div>
+
+<p>I&#39;ve used this to give better control around TextFields and hovering actions such as the one above. Check out a <a href="http://jsbin.com/ihiyis/1/edit">jsbin</a> of this in action.</p>
 
   </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+    <span class="post-category">See more acticles about <a href="/topics/js">js</a></span>
+    
+
+    
+    <span class="tags">Tagged: 
+      
+        <a href="/tags/js,">js,</a>,
+      
+        <a href="/tags/ember">ember</a>
+      
+    </span>
+    
+
+    <span class="post-date">Written: 26 February 2013</span>
+
+    
+    <span class="previous"><a href="/js/2013/02/13/ember-nested-routes/">Ember.js Nested Routes</a></span>
+    
+
+    
+  </div>
+  
 </div>
+
+
+
 
     <div id="push"> </div>
   </div>
