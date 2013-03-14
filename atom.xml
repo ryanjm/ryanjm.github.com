@@ -4,13 +4,24 @@
  <title>Ryan Mathews</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2013-02-26T18:09:52-07:00</updated>
+ <updated>2013-03-14T09:31:30-06:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
    <email>ryan@ryanjm.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Ember Press</title>
+   <link href="http://www.ryanjm.com/js/2013/03/14/ember-press/"/>
+   <updated>2013-03-14T00:00:00-06:00</updated>
+   <id>http://www.ryanjm.com/js/2013/03/14/ember-press</id>
+   <content type="html">&lt;p&gt;Maybe I&amp;#39;m just easily impressed, but I &lt;em&gt;really&lt;/em&gt; like Robin Ward&amp;#39;s &lt;a href=&quot;http://emberpress.eviltrout.com/&quot;&gt;Ember Press&lt;/a&gt;. It isn&amp;#39;t really my kind of game, but it is a great example of a well written Ember application. Robin even wrote up &lt;a href=&quot;http://emberpress.eviltrout.com/docs/emberpress.html&quot;&gt;documentation&lt;/a&gt; for the Ember code (which looks amazing thanks to &lt;a href=&quot;http://jashkenas.github.com/docco/&quot;&gt;Docco&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;If you are interested in learning Ember, definitely check it out.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Ember.js and View Delegation</title>
