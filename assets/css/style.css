@@ -498,6 +498,23 @@ div.extra {
       top: 50%;
       margin-top: -3px; }
 
+div.mailing-list {
+  padding: 15px;
+  border: solid 1px #b4b4b4;
+  background-color: #f4f4f4;
+  overflow: auto;
+  margin-top: 40px; }
+  div.mailing-list p {
+    margin-top: 0; }
+  div.mailing-list label, div.mailing-list input {
+    float: left; }
+  div.mailing-list label {
+    width: 130px;
+    clear: left;
+    margin-bottom: 10px; }
+  div.mailing-list .clear {
+    clear: both; }
+
 footer {
   background-color: #e7e7e7; }
   footer div {
