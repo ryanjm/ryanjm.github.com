@@ -119,3 +119,18 @@ div.extra {
   }
 
 }
+
+div.mailing-list {
+  padding: 15px;
+  border: solid 1px darken($light-bg, 20%);
+  background-color: lighten($light-bg, 5%);
+  overflow: auto;
+  margin-top: 40px;
+
+  p { margin-top: 0; }
+
+  label, input { float: left; }
+  label { width: 130px; clear: left; margin-bottom: 10px; }
+
+  .clear { clear: both; }
+}
