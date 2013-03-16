@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+  
+	<title>Testing an Ember.js App | RyanJM</title>
+  
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link href='http://fonts.googleapis.com/css?family=Tenor+Sans|Cousine|Crimson+Text' rel='stylesheet' type='text/css'>
+	<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+	<link href="/assets/css/autumn.css" rel="stylesheet" type="text/css" media="all">
+	
+	<link href='http://www.myopenid.com/server' rel='openid.server' />
+  <link href='http://ryanjm.myopenid.com/' rel='openid.delegate' />
+</head>
+<body>
+  <div class="container">
+    <div class="post">
+  
+  <h1>Testing an Ember.js App</h1>
+
+  <a href="/" class="back-link">Back to all posts</a>
+  
+  <div class="content">
+    <p>When developing in Rails I prefer to do TDD. So when I start my Ember app I wanted to do the same. Unfortunately there isn&#39;t much out there. Ember.js uses <a href="http://qunitjs.com/">QUnit</a>, but after fiddling around for a day trying to get it set up with my Rails project I wasn&#39;t having any luck.</p>
+
+<p>Then I saw Jo Liss&#39;s <a href="http://www.slideshare.net/jo_liss/testing-ember-apps">Testing Ember Apps</a> presentation and saw that she used <a href="https://github.com/jfirebaugh/konacha">Konacha</a>. Konacha is built for Rails and puts together Mocha and Chai (see the github page for more information). </p>
+
+<p>It uses Rails&#39;s asset pipeline which means it is really easy to get started, but after the initial setup there were a couple bumps in the road for me.</p>
+
+<h2 id="toc_10">Load the whole thing or parts in isolation?</h2>
+
+<p>Some people say you should run your tests in isolation. Others say to just load the entire Ember.js app. So I <a href="https://twitter.com/ryanjm33/status/310155183327948800">asked</a> and Jo said she loaded the entire thing.</p>
+
+<p>To do this, I added a <code>spec_helper.js</code> that loads the same files <code>application.js</code> does. Since the asset pipeline is supported it is just copy and paste. The main thing I changed in my <code>spec_helper.js</code> is to put my app into testing.</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">Ember</span><span class="p">.</span><span class="nx">testing</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+
+<span class="nx">App</span> <span class="o">=</span> <span class="nx">Ember</span><span class="p">.</span><span class="nx">Application</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>Then inside my tests I do three things: require the <code>spec_helper</code>; add a <code>before</code> callback in which I create an instance of the app; and add an <code>afterEach</code> in order to reset the app after each test.</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="c1">//= require spec_helper</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;MyModel&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">before</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Ember</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">App</span><span class="p">.</span><span class="nx">initialize</span><span class="p">();</span>     
+    <span class="p">});</span>    
+  <span class="p">});</span>
+
+  <span class="nx">afterEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Ember</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">App</span><span class="p">.</span><span class="nx">reset</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Remember that when you have <code>Ember.testing = true</code> you have to wrap most things in <code>Ember.run</code>. I&#39;m still figuring out when I do and don&#39;t need it.</p>
+
+<h2 id="toc_11">Fixtures</h2>
+
+<p>In trying to keep things DRY, I wanted the ability to create the same object multiple times. I&#39;m not sure if there are best practices out there for js testing, but I ended up creating a <code>fixtures</code> dir under <code>spec/javascripts</code> to hold my fixtures.</p>
+
+<p>Since you need to be able to identify <em>when</em> to create a given object wrap it inside a function.</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="kd">function</span> <span class="nx">myModelFixture</span><span class="p">()</span> <span class="p">{</span>
+
+  <span class="nx">App</span><span class="p">.</span><span class="nx">adapter</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">App</span><span class="p">.</span><span class="nx">store</span><span class="p">,</span> <span class="nx">App</span><span class="p">.</span><span class="nx">MyModel</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">id</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Hello World&quot;</span>
+  <span class="p">});</span>
+<span class="p">};</span>
+</code></pre>
+</div>
+
+<p>This lets us call it in a <code>beforeEach</code> method.</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;MyModel&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">Ember</span><span class="p">.</span><span class="nx">run</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+      <span class="nx">budgetFixture</span><span class="p">();</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+  <span class="p">...</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<h2 id="toc_12">Loading Data</h2>
+
+<p>Konacha runs everything in the browser. Therefore to test Ember Data models you have to create them (thus the fixutres above). My problem came with figuring out the proper way to do so.</p>
+
+<p>I first tried <code>App.MyModel.createRecord();</code> which worked for simple models, but when I started trying to do embedded objects it wasn&#39;t working. </p>
+
+<p>I looked through Ember&#39;s source and saw they did <code>App.store.load(App.MyModel, {...});</code> and that worked for awhile until I figured out the models weren&#39;t actually being created. I could test of the length of the embedded objects, but not actually grab any of them. </p>
+
+<p>I then found I had to do <code>App.adapter.load(App.store, App.MyModel, {...});</code>. This means you need to create an instance of your store and your adapter. Because I&#39;m using <code>FixtureAdapter</code> for when I do my views, I ended up extending the adapter. This means in my <code>spec_helper</code> I do:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span> <span class="o">=</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">RESTAdapter</span><span class="p">.</span><span class="nx">extend</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>Since this is loaded before my <code>store.js</code> I can make it the default for <code>App.Adapter</code>. In <code>store.js</code> I have:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span> <span class="o">||</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">FixtureAdapter</span><span class="p">.</span><span class="nx">extend</span><span class="p">();</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">Store</span> <span class="o">=</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">Store</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">revision</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+  <span class="nx">adapter</span><span class="o">:</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span>
+<span class="p">});</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">store</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Store</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>Because I have my embed rules next to my models, my adapter has to be created after the models:</p>
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">MyModel</span> <span class="o">=</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">(...)</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">App</span><span class="p">.</span><span class="nx">MyModel</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">otherModel</span><span class="o">:</span> <span class="p">{</span> <span class="nx">embedded</span><span class="o">:</span> <span class="s1">&#39;always&#39;</span> <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="p">...</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">adapter</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>Now that all of this is in place I&#39;ve been able to start testing my models with confidence.</p>
+
+  </div>
+  
+  <div class="extra">
+    
+
+    
+
+    
+    <span class="post-category">See more acticles about <a href="/topics/js">js</a></span>
+    
+
+    
+    <span class="tags">Tagged: 
+      
+        <a href="/tags/js">js</a>,
+      
+        <a href="/tags/ember">ember</a>
+      
+    </span>
+    
+
+    <span class="post-date">Written: 16 March 2013</span>
+
+    
+    <span class="previous"><a href="/js/2013/03/14/ember-press/">Ember Press</a></span>
+    
+
+    
+  </div>
+  
+</div>
+
+
+
+
+    <div id="push"> </div>
+  </div>
+  <footer>
+    <div>
+      <img src="/assets/img/profile.jpg" alt="Ryan Mathews" />
+      <p>Hi, my name is Ryan Mathews. I'm a 
+        co-founder at <a href='http://orangeqc.com'>OrangeQC</a> and mentor at <a href='http://bloc.io'>Bloc.io</a>.</p>
+      <p>
+        <a href="http://github.com/ryanjm">Github</a> 
+        <a href="http://twitter.com/ryanjm33">Twitter</a> 
+        <a href="http://google.com/+ryanjm">Google+</a> 
+        <a href="http://ryanjm.com/atom.xml">RSS</a>
+      </p>
+    </div>
+  </footer>
+
+
+<script src="/assets/js/jquery-1.8.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/script.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28520278-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</body>
+</html>

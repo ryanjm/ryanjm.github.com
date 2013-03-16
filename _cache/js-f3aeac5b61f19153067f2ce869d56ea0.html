@@ -1,0 +1,10 @@
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span> <span class="o">||</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">FixtureAdapter</span><span class="p">.</span><span class="nx">extend</span><span class="p">();</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">Store</span> <span class="o">=</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">Store</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+  <span class="nx">revision</span><span class="o">:</span> <span class="mi">11</span><span class="p">,</span>
+  <span class="nx">adapter</span><span class="o">:</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span>
+<span class="p">});</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">store</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Store</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+</code></pre>
+</div>

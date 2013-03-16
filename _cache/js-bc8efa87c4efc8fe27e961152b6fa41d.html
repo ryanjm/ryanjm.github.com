@@ -1,0 +1,11 @@
+<div class="highlight"><pre><code class="js codehilite"><span class="nx">App</span><span class="p">.</span><span class="nx">MyModel</span> <span class="o">=</span> <span class="nx">DS</span><span class="p">.</span><span class="nx">Model</span><span class="p">.</span><span class="nx">extend</span><span class="p">(...)</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">App</span><span class="p">.</span><span class="nx">MyModel</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">otherModel</span><span class="o">:</span> <span class="p">{</span> <span class="nx">embedded</span><span class="o">:</span> <span class="s1">&#39;always&#39;</span> <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="p">...</span>
+
+<span class="nx">App</span><span class="p">.</span><span class="nx">adapter</span> <span class="o">=</span> <span class="nx">App</span><span class="p">.</span><span class="nx">Adapter</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span>
+</code></pre>
+</div>
