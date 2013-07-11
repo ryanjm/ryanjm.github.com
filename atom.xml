@@ -4,13 +4,30 @@
  <title>Ryan Mathews</title>
  <link href="http://www.ryanjm.com.com/atom.xml" rel="self"/>
  <link href="http://www.ryanjm.com/"/>
- <updated>2013-03-16T11:39:15-06:00</updated>
+ <updated>2013-07-11T07:58:30-06:00</updated>
  <id>http://www.ryanjm.com/</id>
  <author>
    <name>Ryan Mathews</name>
    <email>ryan@ryanjm.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Time Management</title>
+   <link href="http://www.ryanjm.com/productivity/2013/07/11/time-management/"/>
+   <updated>2013-07-11T00:00:00-06:00</updated>
+   <id>http://www.ryanjm.com/productivity/2013/07/11/time-management</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://mattgornick.com/&quot;&gt;Matt&lt;/a&gt; pointed me to a great slide share called &lt;a href=&quot;http://www.slideshare.net/egarbugli/26-time-management-hacks-i-wish-id-known-at-20&quot;&gt;26 Time Management Hacks I Wish I&amp;#39;d Known at 20&lt;/a&gt;. I think it is a great list of reminders and some of them really stood out to me.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Work more when you&amp;#39;re in the zone. Relax when you&amp;#39;re not.&lt;/li&gt;
+&lt;li&gt;Work iteratively.&lt;/li&gt;
+&lt;li&gt;Put meetings at the beginning of the day.&lt;/li&gt;
+&lt;li&gt;Keep the same context throughout the day. Switching between projects/clients is unproductive.&lt;/li&gt;
+&lt;li&gt;Always take notes.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Testing an Ember.js App</title>
