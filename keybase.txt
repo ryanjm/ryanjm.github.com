@@ -1,0 +1,74 @@
+==================================================================
+https://keybase.io/ryanjm
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://ryanjm.com
+  * I am ryanjm (https://keybase.io/ryanjm) on keybase.
+  * I have a public key with fingerprint 77EC FDF8 8283 E0B4 085C  518A 98E7 BF7A 2B88 B73E
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "77ecfdf88283e0b4085c518a98e7bf7a2b88b73e",
+            "host": "keybase.io",
+            "key_id": "98e7bf7a2b88b73e",
+            "kid": "010118b00a1fb730f5e82f18ad55fb6f839227e2448bd5ce6602acb5e59b615d4e060a",
+            "uid": "cfcddf6f334dce406db2658952605100",
+            "username": "ryanjm"
+        },
+        "service": {
+            "hostname": "ryanjm.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1431463781,
+    "expire_in": 157680000,
+    "prev": "8644a434a592c0ebf9649d6074c362641ee6e82c609b5f9f90155ee185ce501c",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMMxAnicbVJpUFVlGL4sktw0HCiyBJyOMpES8539nOsyGiDijAOB4WQ6zFm+czlc
+uMu5h6tAMPpDwyZZZEjKjbREBaZQh8VYvEIY0CIQUBAymnFtbpqGYhhE5zD1o5m+
+P998z/s8z7t8b+diP4PRp9LTnre6qHG9T697bY7hjRQzzEd4m5iLmPIRC5y/JNlq
+hopdka0qYkJoGgqSKDEMxuAQ8ARgSIFEGY5lIM1LNIfxDMPTOESikQybU1doNjzn
+hDGyTcO0R7osauj/8C3zAYACFGV4ADhU0gJAIiGDSVoGkSQlnpIYnMUwGmIEwfAi
+KUCKAhgn8CQkWZ5CSZGAgAKcZpczbydIgihKlITjhChAAlAij1Ekw5IYBUgUAJ3o
+hIqVy4YaW8nlrJnZSEE0omEuWYD6APQ+/hOPEWzZms6u2FSbYMvS8AxVtZt0mZpr
+13m7IZ/+j0M6L1tFbYSawAUVp2yzIiZUYwqqrFuiBI4SFE4zaDQC99hlBabLOoOk
+KQZoR08DXZolQxEER+AER7KYACAvsRTBihSgCQGnMIpAIaS0SQkUYHlSYiUWoCQJ
+Iar9DyQBKiB6Tw6rDTERWpmcWbN0ymYrp+YoECm46t7pb/AxGgIW+OpLYDAGLvl3
+NR6PBP2F5udduYfi43c28AOexgfdxsjem9KLxXljg5mFSrc3/D3XxPE0/2hn7SPL
+mZLhgjHXk6+8ib9NSnc6bzfedyzqyzi9oXN6aqLpdLDh1J6OGQavODbzdGdYSxLT
+l5gB7+L+UfSJH1bk/7wmKH5USkgLqUdLC6y39nWY1ySDwE1PlT9T3Fs3fD+qbIsY
+f73qQNSWl8mNcZe7Zh0B/aemzz40YwvCr+BDa78oW7qKzPrgTAL7ddyN/NdHewqG
+HN5DO6ob3LvGtqVdBhHV7z+cerM5pd1Iv5VwI9Q7VxY74k3pDVfdHkNNmrAZ3L72
+YGtdX6bS6po5knTsZHLYwfPFZz+KXOobYBmY9Tzf7yhZObEvPKlhsMMeUo5ub/cV
+CwN+qVoYEty6zP32wZc+7lcXryiur14UdSkWsR/e/me4kGq8OnD9aNXCe4Xf1TgS
+P/wxjlg3TV14LeaVtobRKelb80ilX6G4V9wvvxu3PPf3neonRz+XB/Yqny5/hNR9
+P7Q6JHVuMOtIS9CJnMcvlP7UUxN6aXS2qTSrqLdvXdeh2os3I2qDN35T741sL9/c
+/KSkM/JCqkp5jle0JNrHr51n0y/ObNpatOqz+Mxd7og5Jda03tfW3Hbu18pXQzON
+ft2Hm4ssd9/50jLp/GNwWUX3pJE9ELh7W9uz53pKVw4nj+/Iec7Tuv9WE9HlDvsb
+br6x/w==
+=jaL2
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/ryanjm
+
+==================================================================
+
